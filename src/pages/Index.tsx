@@ -202,7 +202,7 @@ export default function HomePage() {
         </div>
         <RevealImage className="relative min-h-[50vh] lg:min-h-full">
           <img
-            src="https://images.unsplash.com/photo-1598371839696-5c5bb1fd256f?w=1000&q=80"
+            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1000&q=80"
             alt="Tattoo studio interior"
             loading="lazy"
             className="w-full h-full object-cover"
