@@ -47,7 +47,7 @@ export const artists: Artist[] = [
   {
     slug: "sofia-reyes",
     name: "Sofia Reyes",
-    photo: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=600&q=80",
+    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80",
     specialty: "Blackwork & Geometric",
     experience: "6 years",
     location: "Barcelona → Paris",
