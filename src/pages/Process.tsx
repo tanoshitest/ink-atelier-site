@@ -52,7 +52,7 @@ export default function ProcessPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1598371839696-5c5bb1fd256f?w=1920&q=80"
+            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&q=80"
             alt="Studio"
             className="w-full h-full object-cover"
           />
