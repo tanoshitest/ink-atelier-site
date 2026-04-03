@@ -1,16 +1,214 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
+import { AnimatedPage, Eyebrow, RevealText, RevealImage, StaggerChildren, fadeUpVariant } from "@/components/AnimationUtils";
+import { artists } from "@/data/artists";
+import { portfolioItems } from "@/data/portfolio";
+import { useRef } from "react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const ease = [0.16, 1, 0.3, 1];
+const featured = portfolioItems.slice(0, 3);
+
+export default function HomePage() {
+  const artistsRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <AnimatedPage>
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1920&q=80"
+            alt="Tattoo close-up"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 to-background/40" />
+        </div>
+        <div className="relative z-10 text-center px-6">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease }}
+            className="eyebrow mb-6"
+          >
+            TATTOO ATELIER
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease }}
+            className="font-display text-7xl md:text-[96px] font-normal tracking-[0.08em] text-foreground leading-none"
+          >
+            DOUCES
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease }}
+            className="font-body text-base italic text-muted-foreground mt-6"
+          >
+            L'art sur la peau
+          </motion.p>
+        </div>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        >
+          <ChevronDown className="w-5 h-5 text-muted-foreground" />
+        </motion.div>
+      </section>
+
+      {/* Featured Work */}
+      <section className="section-spacing">
+        <div className="content-max">
+          <Eyebrow>RECENT WORK</Eyebrow>
+          <RevealText className="mt-4 mb-16">
+            <h2 className="font-display text-4xl md:text-[60px] font-normal text-foreground leading-tight tracking-[-0.03em]">
+              Selected pieces
+            </h2>
+          </RevealText>
+
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-2">
+            {featured.map((item, i) => (
+              <motion.div key={item.id} variants={fadeUpVariant}>
+                <Link to="/portfolio" className="group relative block overflow-hidden">
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full aspect-[3/4] object-cover transition-transform duration-[600ms]"
+                    style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
+                  />
+                  <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] flex flex-col justify-end p-6">
+                    <motion.p className="font-display text-xl text-foreground">{item.title}</motion.p>
+                    <p className="font-body text-xs text-muted-foreground mt-1">{item.artist} — {item.style}</p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </StaggerChildren>
+
+          <div className="mt-12 text-right">
+            <Link to="/portfolio" className="text-link">
+              View all work →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Artists */}
+      <section className="section-spacing">
+        <div className="content-max">
+          <Eyebrow>THE ARTISTS</Eyebrow>
+          <RevealText className="mt-4 mb-16">
+            <h2 className="font-display text-4xl md:text-[60px] font-normal text-foreground leading-tight tracking-[-0.03em]">
+              Masters of ink
+            </h2>
+          </RevealText>
+        </div>
+        <div
+          ref={artistsRef}
+          className="hide-scrollbar overflow-x-auto snap-x snap-mandatory flex gap-6 px-6 lg:px-12 pb-4"
+        >
+          {artists.map((artist, i) => (
+            <motion.div
+              key={artist.slug}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: i * 0.08, ease }}
+              className="snap-start flex-shrink-0 w-[280px] md:w-[300px]"
+            >
+              <Link to={`/artists/${artist.slug}`} className="group block">
+                <div className="overflow-hidden">
+                  <img
+                    src={artist.photo}
+                    alt={artist.name}
+                    loading="lazy"
+                    className="w-full aspect-[3/4] object-cover transition-all duration-[600ms] group-hover:brightness-110"
+                    style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
+                  />
+                </div>
+                <h3 className="font-display text-2xl text-foreground mt-4 transition-colors duration-300 group-hover:text-accent">
+                  {artist.name}
+                </h3>
+                <p className="font-body text-[13px] text-muted-foreground mt-1">
+                  {artist.specialty}
+                </p>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Philosophy */}
+      <section className="min-h-screen flex items-center justify-center section-spacing relative">
+        <div className="absolute inset-0 opacity-[0.08]">
+          <img
+            src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1920&q=80"
+            alt=""
+            className="w-full h-full object-cover blur-sm"
+          />
+        </div>
+        <div className="relative z-10 text-center max-w-[800px] mx-auto px-6">
+          <RevealText>
+            <span className="font-display text-[120px] leading-none text-border block">"</span>
+          </RevealText>
+          <RevealText delay={0.1}>
+            <blockquote className="font-display text-2xl md:text-4xl italic text-foreground leading-snug -mt-16">
+              Chaque trait d'encre raconte une histoire éternelle
+            </blockquote>
+          </RevealText>
+          <RevealText delay={0.2}>
+            <p className="font-body text-sm text-muted-foreground mt-6">
+              Every ink stroke tells an eternal story
+            </p>
+          </RevealText>
+          <RevealText delay={0.3}>
+            <div className="w-16 h-px bg-border mx-auto mt-8" />
+          </RevealText>
+          <RevealText delay={0.4}>
+            <Link to="/process" className="text-link mt-8 inline-block">
+              Discover our process →
+            </Link>
+          </RevealText>
+        </div>
+      </section>
+
+      {/* Booking CTA */}
+      <section className="min-h-screen grid grid-cols-1 lg:grid-cols-2">
+        <div className="flex flex-col justify-center px-6 lg:px-16 py-24 lg:py-0">
+          <Eyebrow>BEGIN YOUR JOURNEY</Eyebrow>
+          <RevealText className="mt-4">
+            <h2 className="font-display text-4xl md:text-5xl font-normal text-foreground leading-tight tracking-[-0.03em]">
+              Book a consultation
+            </h2>
+          </RevealText>
+          <RevealText delay={0.15}>
+            <p className="font-body text-base text-secondary-foreground/80 mt-6 max-w-[400px] leading-relaxed">
+              Every tattoo begins with a conversation. Tell us your story, and we'll help bring your vision to life.
+            </p>
+          </RevealText>
+          <RevealText delay={0.25} className="mt-10 flex flex-col sm:flex-row items-start gap-4">
+            <Link to="/booking" className="btn-primary">
+              Book an appointment
+            </Link>
+            <a href="mailto:hello@douces.ink" className="text-link">
+              Or contact us directly →
+            </a>
+          </RevealText>
+        </div>
+        <RevealImage className="relative min-h-[50vh] lg:min-h-full">
+          <img
+            src="https://images.unsplash.com/photo-1598371839696-5c5bb1fd256f?w=1000&q=80"
+            alt="Tattoo studio interior"
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+        </RevealImage>
+      </section>
+    </AnimatedPage>
   );
-};
-
-const Index = PlaceholderIndex;
-
-export default Index;
+}
