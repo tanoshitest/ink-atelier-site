@@ -1,0 +1,70 @@
+import { Link } from "react-router-dom";
+
+export default function Footer() {
+  return (
+    <footer className="border-t border-border bg-background">
+      <div className="content-max section-spacing">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          {/* Brand */}
+          <div>
+            <Link to="/" className="font-display text-2xl tracking-[0.08em] text-foreground">
+              DOUCES
+            </Link>
+            <p className="font-body text-sm italic text-muted-foreground mt-3">
+              L'art sur la peau
+            </p>
+            <p className="font-body text-xs text-muted-foreground mt-6">
+              &copy; 2026 Douces. All rights reserved.
+            </p>
+          </div>
+
+          {/* Studio */}
+          <div>
+            <h4 className="eyebrow mb-6">Studio</h4>
+            <div className="space-y-3 font-body text-[13px] text-muted-foreground">
+              <p>23 Rue de la Roquette</p>
+              <p>75011 Paris</p>
+              <p className="mt-4">+33 1 43 55 12 78</p>
+              <p>hello@douces.ink</p>
+            </div>
+          </div>
+
+          {/* Navigate */}
+          <div>
+            <h4 className="eyebrow mb-6">Navigate</h4>
+            <div className="space-y-3">
+              {["Portfolio", "Artists", "Process", "Booking"].map((item) => (
+                <Link
+                  key={item}
+                  to={`/${item.toLowerCase()}`}
+                  className="block font-body text-[13px] text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Follow */}
+          <div>
+            <h4 className="eyebrow mb-6">Follow</h4>
+            <div className="space-y-3">
+              {["Instagram", "TikTok", "Pinterest"].map((item) => (
+                <a
+                  key={item}
+                  href="#"
+                  className="block font-body text-[13px] text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
+                  {item}
+                </a>
+              ))}
+              <p className="font-body text-[13px] text-muted-foreground mt-6">
+                Open: Tue–Sat, 11h–20h
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
