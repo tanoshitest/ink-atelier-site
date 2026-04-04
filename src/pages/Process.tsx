@@ -112,12 +112,12 @@ export default function ProcessPage() {
                   {ch.body}
                 </p>
               </RevealText>
-              <RevealImage delay={0.2} className="mt-12">
+              <RevealText delay={0.2} className="mt-12">
                 <img src={ch.image} alt={ch.heading} loading="lazy" className="w-full aspect-[16/9] object-cover" />
                 {ch.caption && (
                   <p className="font-body text-xs text-muted-foreground mt-4 italic">{ch.caption}</p>
                 )}
-              </RevealImage>
+              </RevealText>
             </div>
           </section>
         ))}
