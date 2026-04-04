@@ -49,13 +49,19 @@ export default function Footer() {
           <div>
             <h4 className="eyebrow mb-6">Follow</h4>
             <div className="space-y-3">
-              {["Instagram", "TikTok", "Pinterest"].map((item) => (
+              {[
+                { name: "Instagram", url: "https://www.instagram.com/wolfsox.ins" },
+                { name: "TikTok", url: "https://www.tiktok.com/@doucesink.danang" },
+                { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61561304925962" },
+              ].map((item) => (
                 <a
-                  key={item}
-                  href="#"
+                  key={item.name}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block font-body text-[13px] text-muted-foreground hover:text-foreground transition-colors duration-300"
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
               <p className="font-body text-[13px] text-muted-foreground mt-6">
