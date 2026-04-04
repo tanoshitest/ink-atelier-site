@@ -70,7 +70,7 @@ export default function HomePage() {
             </h2>
           </RevealText>
 
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-2">
+          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {featured.map((item, i) => (
               <motion.div key={item.id} variants={fadeUpVariant}>
                 <Link to="/portfolio" className="group relative block overflow-hidden">
