@@ -110,7 +110,7 @@ export default function HomePage() {
         </div>
         <div
           ref={artistsRef}
-          className="hide-scrollbar overflow-x-auto snap-x snap-mandatory flex gap-6 px-6 lg:px-12 pb-4"
+          className="hide-scrollbar overflow-x-auto snap-x snap-mandatory flex gap-6 px-6 lg:px-12 pb-4 md:gap-6"
         >
           {artists.map((artist, i) => (
             <motion.div
@@ -119,7 +119,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, delay: i * 0.08, ease }}
-              className="snap-start flex-shrink-0 w-[280px] md:w-[300px]"
+              className="snap-center flex-shrink-0 w-[85vw] md:w-[300px]"
             >
               <Link to={`/artists/${artist.slug}`} className="group block">
                 <div className="overflow-hidden">
