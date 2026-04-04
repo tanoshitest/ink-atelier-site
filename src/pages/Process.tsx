@@ -10,7 +10,7 @@ const chapters = [
     eyebrow: "CHAPTER 01",
     heading: "The conversation",
     body: "Every journey begins with listening. During your consultation, we explore your vision — the meaning behind the mark, the placement on your body, and the style that speaks to your story. This conversation is sacred. We never rush it. Whether in person at our Paris atelier or via video call, we dedicate a full hour to understanding exactly what this tattoo means to you.",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1200&q=80",
     caption: "Every piece begins here — a conversation, not a transaction.",
   },
   {
@@ -18,21 +18,21 @@ const chapters = [
     eyebrow: "CHAPTER 02",
     heading: "The blueprint",
     body: "Your artist translates the conversation into graphite and ink. Multiple sketches, digital refinements, and placement studies on your specific anatomy. We iterate until the design feels inevitable — as though it always belonged there. Custom stencils are prepared with surgical precision. Nothing is generic, nothing is pulled from a flash sheet. Every line exists for a reason.",
-    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=1200&q=80",
   },
   {
     num: "03",
     eyebrow: "CHAPTER 03",
     heading: "Ink meets skin",
     body: "The studio transforms. Music is curated to your taste. Temperature is set. Your artist prepares their station with medical-grade sterilization — every needle is single-use, every surface is clinical. Then the work begins. Fine-line pieces may take two hours. Full sleeves span multiple sessions across months. We work at the pace your body needs. Breaks are built in. Comfort is non-negotiable.",
-    image: "https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=1200&q=80",
   },
   {
     num: "04",
     eyebrow: "CHAPTER 04",
     heading: "The healing",
     body: "A tattoo is a wound that becomes art. Proper aftercare is the final act of creation. We provide detailed healing instructions tailored to your skin type and tattoo location. Follow-up consultations are included — we check in at 2 weeks and again at 6 weeks. Touch-ups within the first year are always complimentary. Your tattoo deserves the same care we put into creating it.",
-    image: "https://images.unsplash.com/photo-1542856391-010fb87dcfed?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1590246814883-57c511e76e64?w=1200&q=80",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function ProcessPage() {
                 </p>
               </RevealText>
               <RevealImage delay={0.2} className="mt-12">
-                <img src={ch.image} alt={ch.heading} loading="lazy" className="w-full object-cover" />
+                <img src={ch.image} alt={ch.heading} loading="lazy" className="w-full aspect-[16/9] object-cover" />
                 {ch.caption && (
                   <p className="font-body text-xs text-muted-foreground mt-4 italic">{ch.caption}</p>
                 )}
