@@ -1,8 +1,12 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Link } from "react-router-dom";
-import { AnimatedPage, Eyebrow, RevealText, RevealImage } from "@/components/AnimationUtils";
+import {
+  AnimatedPage, Eyebrow, Reveal, ClipReveal, WordReveal, CharReveal,
+  ParallaxImage, RevealText,
+} from "@/components/AnimationUtils";
 
 const ease = [0.16, 1, 0.3, 1];
+const clipDirs = ["cl", "cr"] as const;
 
 const chapters = [
   {
@@ -42,7 +46,6 @@ export default function ProcessPage() {
 
   return (
     <AnimatedPage>
-      {/* Scroll progress indicator */}
       <motion.div
         style={{ scaleY, transformOrigin: "top" }}
         className="fixed left-0 top-0 w-0.5 h-full bg-foreground z-40"
@@ -60,17 +63,17 @@ export default function ProcessPage() {
         </div>
         <div className="relative z-10 text-center px-6">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease }}
             className="font-display text-5xl md:text-7xl font-normal text-foreground tracking-[-0.03em]"
           >
-            The process
+            <WordReveal text="The process" stagger={0.06} />
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease }}
+            transition={{ duration: 0.8, delay: 0.4, ease }}
             className="font-body text-base text-muted-foreground mt-4"
           >
             From vision to permanence
@@ -80,21 +83,21 @@ export default function ProcessPage() {
 
       {/* Sticky sidebar + chapters */}
       <div className="relative">
-        {/* Sidebar nav — desktop */}
         <div className="hidden lg:block fixed left-12 top-1/2 -translate-y-1/2 z-30 space-y-6">
-          {chapters.map((ch) => (
-            <a
-              key={ch.num}
-              href={`#chapter-${ch.num}`}
-              className="block font-body text-[11px] uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors duration-300"
-            >
-              {ch.num}
-            </a>
+          {chapters.map((ch, i) => (
+            <Reveal key={ch.num} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.1}>
+              <a
+                href={`#chapter-${ch.num}`}
+                className="block font-body text-[11px] uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors duration-300"
+              >
+                {ch.num}
+              </a>
+            </Reveal>
           ))}
         </div>
 
         {/* Chapters */}
-        {chapters.map((ch) => (
+        {chapters.map((ch, i) => (
           <section
             key={ch.num}
             id={`chapter-${ch.num}`}
@@ -104,20 +107,28 @@ export default function ProcessPage() {
               <Eyebrow>{ch.eyebrow}</Eyebrow>
               <RevealText className="mt-4">
                 <h2 className="font-display text-3xl md:text-5xl font-normal text-foreground leading-tight tracking-[-0.03em]">
-                  {ch.heading}
+                  <WordReveal text={ch.heading} />
                 </h2>
               </RevealText>
-              <RevealText delay={0.15}>
+              <Reveal direction="up" delay={0.15}>
                 <p className="font-body text-[15px] text-secondary-foreground/80 mt-8 leading-relaxed max-w-[640px]">
                   {ch.body}
                 </p>
-              </RevealText>
-              <RevealText delay={0.2} className="mt-12">
-                <img src={ch.image} alt={ch.heading} loading="lazy" className="w-full aspect-[16/9] object-cover" />
+              </Reveal>
+              <ClipReveal direction={clipDirs[i % 2]} delay={0.2} className="mt-12">
+                <ParallaxImage
+                  src={ch.image}
+                  alt={ch.heading}
+                  className="aspect-[16/9]"
+                  imgClassName="aspect-auto"
+                  speed={0.12}
+                />
                 {ch.caption && (
-                  <p className="font-body text-xs text-muted-foreground mt-4 italic">{ch.caption}</p>
+                  <Reveal direction="up" delay={0.3}>
+                    <p className="font-body text-xs text-muted-foreground mt-4 italic">{ch.caption}</p>
+                  </Reveal>
                 )}
-              </RevealText>
+              </ClipReveal>
             </div>
           </section>
         ))}
@@ -127,14 +138,14 @@ export default function ProcessPage() {
           <div className="content-max text-center">
             <RevealText>
               <h2 className="font-display text-3xl md:text-5xl text-foreground tracking-[-0.03em]">
-                Ready to begin?
+                <WordReveal text="Ready to begin?" />
               </h2>
             </RevealText>
-            <RevealText delay={0.1} className="mt-8">
+            <Reveal direction="up" delay={0.1} className="mt-8">
               <Link to="/booking" className="btn-primary">
                 Book an appointment
               </Link>
-            </RevealText>
+            </Reveal>
           </div>
         </section>
       </div>
