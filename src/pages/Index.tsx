@@ -1,18 +1,45 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import studioBg from "@/assets/studio.png";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   AnimatedPage, Eyebrow, Reveal, ClipReveal, WordReveal, CharReveal,
   StaggerChildren, fadeUpVariant, RevealText,
 } from "@/components/AnimationUtils";
 import { artists } from "@/data/artists";
 import { portfolioItems } from "@/data/portfolio";
-import { useRef } from "react";
+import { useRef, useState, useCallback } from "react";
 
 const ease = [0.16, 1, 0.3, 1];
-const featured = portfolioItems.slice(0, 3);
 const clipDirs = ["cl", "cu", "cr"] as const;
+
+const collectionItems = [
+  {
+    src: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=800&q=80",
+    title: "Serpent Garden",
+    description: "Những đường nét mảnh mai uốn lượn tạo nên khu vườn bí ẩn trên da. Một tác phẩm tinh tế, vừa mạnh mẽ vừa đầy chất thơ.",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1562962230-16e4623d36e6?w=800&q=80",
+    title: "Geometric Bloom",
+    description: "Sự kết hợp giữa hình học và thiên nhiên, nơi những cánh hoa nở rộ trong khuôn khổ hoàn hảo của đường thẳng và góc cạnh.",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=800&q=80",
+    title: "Koi Ascent",
+    description: "Cá koi vượt dòng — biểu tượng của sự kiên cường và vươn lên. Phong cách Nhật Bản truyền thống với nét bút hiện đại.",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&q=80",
+    title: "Botanical Sleeve",
+    description: "Một bộ sưu tập thực vật được khắc hoạ tinh xảo, phủ kín cánh tay như một khu vườn sống động.",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800&q=80",
+    title: "Guardian Muse",
+    description: "Đôi cánh và ánh nhìn huyền bí giữa lưng như biểu tượng của trực giác và sự bảo hộ. Một tác phẩm nghệ thuật đầy chiều sâu.",
+  },
+];
 
 export default function HomePage() {
   const artistsRef = useRef<HTMLDivElement>(null);
