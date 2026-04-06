@@ -38,7 +38,6 @@ export default function Navbar() {
             <img src={logo} alt="DOUCES logo" className="w-8 h-8 object-contain" />
             DOUCES
           </Link>
-          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-10">
