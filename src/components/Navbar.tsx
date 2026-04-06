@@ -1,6 +1,7 @@
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { label: "Portfolio", href: "/portfolio" },
