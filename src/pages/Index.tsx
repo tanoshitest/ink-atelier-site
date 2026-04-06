@@ -41,6 +41,99 @@ const collectionItems = [
   },
 ];
 
+function FineLineCarousel() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const go = useCallback((dir: number) => {
+    setDirection(dir);
+    setCurrent((prev) => (prev + dir + collectionItems.length) % collectionItems.length);
+  }, []);
+
+  const item = collectionItems[current];
+
+  const slideVariants = {
+    enter: (d: number) => ({ x: d > 0 ? 300 : -300, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (d: number) => ({ x: d > 0 ? -300 : 300, opacity: 0 }),
+  };
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      {/* Image */}
+      <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-muted">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.img
+            key={current}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
+            src={item.src}
+            alt={item.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+
+        {/* Arrows on image */}
+        <button
+          onClick={() => go(-1)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/50 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-background/70 transition-colors"
+          aria-label="Previous"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => go(1)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/50 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-background/70 transition-colors"
+          aria-label="Next"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Text */}
+      <div className="flex flex-col justify-center">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
+          >
+            <h3 className="font-display text-3xl md:text-4xl text-foreground font-normal">
+              {item.title}
+            </h3>
+            <p className="font-body text-base text-muted-foreground mt-4 leading-relaxed max-w-[400px]">
+              {item.description}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Dots */}
+        <div className="flex items-center gap-2 mt-8">
+          {collectionItems.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
+              className={`transition-all duration-300 rounded-full ${
+                i === current
+                  ? "w-8 h-2 bg-foreground"
+                  : "w-2 h-2 bg-muted-foreground/40 hover:bg-muted-foreground/60"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const artistsRef = useRef<HTMLDivElement>(null);
 
