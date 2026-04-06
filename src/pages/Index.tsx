@@ -1,18 +1,138 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import studioBg from "@/assets/studio.png";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   AnimatedPage, Eyebrow, Reveal, ClipReveal, WordReveal, CharReveal,
   StaggerChildren, fadeUpVariant, RevealText,
 } from "@/components/AnimationUtils";
 import { artists } from "@/data/artists";
 import { portfolioItems } from "@/data/portfolio";
-import { useRef } from "react";
+import { useRef, useState, useCallback } from "react";
 
 const ease = [0.16, 1, 0.3, 1];
-const featured = portfolioItems.slice(0, 3);
 const clipDirs = ["cl", "cu", "cr"] as const;
+
+const collectionItems = [
+  {
+    src: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=800&q=80",
+    title: "Serpent Garden",
+    description: "Những đường nét mảnh mai uốn lượn tạo nên khu vườn bí ẩn trên da. Một tác phẩm tinh tế, vừa mạnh mẽ vừa đầy chất thơ.",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1562962230-16e4623d36e6?w=800&q=80",
+    title: "Geometric Bloom",
+    description: "Sự kết hợp giữa hình học và thiên nhiên, nơi những cánh hoa nở rộ trong khuôn khổ hoàn hảo của đường thẳng và góc cạnh.",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=800&q=80",
+    title: "Koi Ascent",
+    description: "Cá koi vượt dòng — biểu tượng của sự kiên cường và vươn lên. Phong cách Nhật Bản truyền thống với nét bút hiện đại.",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&q=80",
+    title: "Botanical Sleeve",
+    description: "Một bộ sưu tập thực vật được khắc hoạ tinh xảo, phủ kín cánh tay như một khu vườn sống động.",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800&q=80",
+    title: "Guardian Muse",
+    description: "Đôi cánh và ánh nhìn huyền bí giữa lưng như biểu tượng của trực giác và sự bảo hộ. Một tác phẩm nghệ thuật đầy chiều sâu.",
+  },
+];
+
+function FineLineCarousel() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const go = useCallback((dir: number) => {
+    setDirection(dir);
+    setCurrent((prev) => (prev + dir + collectionItems.length) % collectionItems.length);
+  }, []);
+
+  const item = collectionItems[current];
+
+  const slideVariants = {
+    enter: (d: number) => ({ x: d > 0 ? 300 : -300, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (d: number) => ({ x: d > 0 ? -300 : 300, opacity: 0 }),
+  };
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      {/* Image */}
+      <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-muted">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.img
+            key={current}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
+            src={item.src}
+            alt={item.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+
+        {/* Arrows on image */}
+        <button
+          onClick={() => go(-1)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/50 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-background/70 transition-colors"
+          aria-label="Previous"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => go(1)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/50 backdrop-blur-sm flex items-center justify-center text-foreground hover:bg-background/70 transition-colors"
+          aria-label="Next"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Text */}
+      <div className="flex flex-col justify-center">
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
+          >
+            <h3 className="font-display text-3xl md:text-4xl text-foreground font-normal">
+              {item.title}
+            </h3>
+            <p className="font-body text-base text-muted-foreground mt-4 leading-relaxed max-w-[400px]">
+              {item.description}
+            </p>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Dots */}
+        <div className="flex items-center gap-2 mt-8">
+          {collectionItems.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
+              className={`transition-all duration-300 rounded-full ${
+                i === current
+                  ? "w-8 h-2 bg-foreground"
+                  : "w-2 h-2 bg-muted-foreground/40 hover:bg-muted-foreground/60"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function HomePage() {
   const artistsRef = useRef<HTMLDivElement>(null);
@@ -63,37 +183,17 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Featured Work */}
+      {/* Fine Line Collection */}
       <section className="section-spacing">
         <div className="content-max">
-          <Eyebrow>RECENT WORK</Eyebrow>
+          <Eyebrow>FINE LINE COLLECTION</Eyebrow>
           <RevealText className="mt-4 mb-16">
             <h2 className="font-display text-4xl md:text-[60px] font-normal text-foreground leading-tight tracking-[-0.03em]">
               <WordReveal text="Selected pieces" />
             </h2>
           </RevealText>
 
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-0">
-            {featured.map((item, i) => (
-              <motion.div key={item.id} variants={fadeUpVariant}>
-                <ClipReveal direction={clipDirs[i % 3]} delay={i * 0.1}>
-                  <Link to="/portfolio" className="group relative block overflow-hidden">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      loading="lazy"
-                      className="w-full aspect-[3/4] object-cover transition-transform duration-[600ms]"
-                      style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
-                    />
-                    <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] flex flex-col justify-end p-6">
-                      <p className="font-display text-xl text-foreground">{item.title}</p>
-                      <p className="font-body text-xs text-muted-foreground mt-1">{item.artist} — {item.style}</p>
-                    </div>
-                  </Link>
-                </ClipReveal>
-              </motion.div>
-            ))}
-          </StaggerChildren>
+          <FineLineCarousel />
 
           <div className="mt-12 text-right">
             <Reveal direction="right">
