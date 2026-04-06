@@ -33,9 +33,11 @@ export default function Navbar() {
         <div className="content-max flex items-center justify-between h-20">
           <Link
             to="/"
-            className="font-display text-xl tracking-[0.1em] text-foreground"
+            className="flex items-center gap-2 font-display text-xl tracking-[0.1em] text-foreground"
           >
+            <img src={logo} alt="DOUCES logo" className="w-8 h-8 object-contain" />
             DOUCES
+          </Link>
           </Link>
 
           {/* Desktop nav */}
