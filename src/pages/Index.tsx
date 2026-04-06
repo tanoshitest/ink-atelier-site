@@ -92,35 +92,17 @@ export default function HomePage() {
 
       {/* Featured Work */}
       <section className="section-spacing">
+      {/* Fine Line Collection */}
+      <section className="section-spacing">
         <div className="content-max">
-          <Eyebrow>RECENT WORK</Eyebrow>
+          <Eyebrow>FINE LINE COLLECTION</Eyebrow>
           <RevealText className="mt-4 mb-16">
             <h2 className="font-display text-4xl md:text-[60px] font-normal text-foreground leading-tight tracking-[-0.03em]">
               <WordReveal text="Selected pieces" />
             </h2>
           </RevealText>
 
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-0">
-            {featured.map((item, i) => (
-              <motion.div key={item.id} variants={fadeUpVariant}>
-                <ClipReveal direction={clipDirs[i % 3]} delay={i * 0.1}>
-                  <Link to="/portfolio" className="group relative block overflow-hidden">
-                    <img
-                      src={item.src}
-                      alt={item.title}
-                      loading="lazy"
-                      className="w-full aspect-[3/4] object-cover transition-transform duration-[600ms]"
-                      style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
-                    />
-                    <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] flex flex-col justify-end p-6">
-                      <p className="font-display text-xl text-foreground">{item.title}</p>
-                      <p className="font-body text-xs text-muted-foreground mt-1">{item.artist} — {item.style}</p>
-                    </div>
-                  </Link>
-                </ClipReveal>
-              </motion.div>
-            ))}
-          </StaggerChildren>
+          <FineLineCarousel />
 
           <div className="mt-12 text-right">
             <Reveal direction="right">
