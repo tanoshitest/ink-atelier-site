@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import studioBg from "@/assets/studio.png";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import {
@@ -21,13 +22,10 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <iframe
-            src="https://www.youtube.com/embed/Fvnk6FDa7xg?autoplay=1&mute=1&loop=1&playlist=Fvnk6FDa7xg&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&iv_load_policy=3"
-            title="DOUCES Background Video"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] md:w-[180%] md:h-[180%] pointer-events-none"
-            style={{ border: 0 }}
+          <img
+            src={studioBg}
+            alt="DOUCES Studio"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 to-background/40" />
         </div>
