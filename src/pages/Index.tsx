@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import studioBg from "@/assets/studio.png";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import {
