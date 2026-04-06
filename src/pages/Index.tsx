@@ -90,8 +90,6 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Featured Work */}
-      <section className="section-spacing">
       {/* Fine Line Collection */}
       <section className="section-spacing">
         <div className="content-max">
