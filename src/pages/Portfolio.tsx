@@ -80,7 +80,7 @@ export default function PortfolioPage() {
                     transition={{ duration: 0.5, ease }}
                     className="mb-1.5 break-inside-avoid"
                   >
-                    <ClipReveal direction={clipCycle[i % 4]} delay={(i % 6) * 0.06}>
+                    <Reveal direction="up" delay={(i % 6) * 0.06}>
                       <button
                         onClick={() => openLightbox(item.id)}
                         className="group relative block w-full overflow-hidden"
@@ -102,7 +102,7 @@ export default function PortfolioPage() {
                           </p>
                         </div>
                       </button>
-                    </ClipReveal>
+                    </Reveal>
                   </motion.div>
                 ))}
               </AnimatePresence>
