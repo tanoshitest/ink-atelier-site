@@ -164,14 +164,14 @@ export default function CollectionPage() {
               </Reveal>
               <div className="grid grid-cols-3 gap-3 mt-12">
                 {ch.images.map((img, j) => (
-                  <ClipReveal key={j} direction={["cl", "cu", "cr"][j % 3] as "cl" | "cu" | "cr"} delay={0.2 + j * 0.1}>
+                  <Reveal key={j} direction="up" delay={0.2 + j * 0.1}>
                     <img
                       src={img}
                       alt={`${ch.heading} ${j + 1}`}
                       loading="lazy"
                       className="w-full aspect-[3/4] object-cover rounded-sm"
                     />
-                  </ClipReveal>
+                  </Reveal>
                 ))}
               </div>
             </div>
