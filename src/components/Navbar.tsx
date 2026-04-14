@@ -5,8 +5,6 @@ import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Artists", href: "/artists" },
-  { label: "Collection", href: "/process" },
   { label: "Book", href: "/booking" },
 ];
 

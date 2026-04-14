@@ -22,10 +22,9 @@ export default function Footer() {
           <div>
             <h4 className="eyebrow mb-6">Studio</h4>
             <div className="space-y-3 font-body text-[13px] text-muted-foreground">
-              <p>23 Rue de la Roquette</p>
-              <p>75011 Paris</p>
-              <p className="mt-4">+33 1 43 55 12 78</p>
-              <p>hello@douces.ink</p>
+              <p>THANH KHE, DA NANG</p>
+              <p className="mt-4">+84 0362 755 400</p>
+              <p>douces.ink0831@gmail.com</p>
             </div>
           </div>
 
@@ -33,7 +32,7 @@ export default function Footer() {
           <div>
             <h4 className="eyebrow mb-6">Navigate</h4>
             <div className="space-y-3">
-              {["Portfolio", "Artists", "Process", "Booking"].map((item) => (
+              {["Portfolio", "Booking"].map((item) => (
                 <Link
                   key={item}
                   to={`/${item.toLowerCase()}`}
@@ -65,7 +64,7 @@ export default function Footer() {
                 </a>
               ))}
               <p className="font-body text-[13px] text-muted-foreground mt-6">
-                Open: Tue–Sat, 11h–20h
+                Open daily: 8 am – 12 pm
               </p>
             </div>
           </div>

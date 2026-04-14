@@ -22,4 +22,4 @@ export const portfolioItems: PortfolioItem[] = [
   { id: 12, src: "https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=600&q=80", title: "Old School Rose", artist: "Léo Marchand", style: "Traditional", aspect: "3/4" },
 ];
 
-export const styles = ["All", "Fine Line", "Blackwork", "Japanese", "Watercolor", "Geometric", "Traditional"];
+export const styles = ["All", "Sexy Placement", "Blackwork & Fine Line", "Realism", "Lettering", "Cute & Color", "Vietnamese Inspired"];
