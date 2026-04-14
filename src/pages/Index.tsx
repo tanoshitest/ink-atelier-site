@@ -155,7 +155,7 @@ export default function HomePage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease }}
           >
-            <CharReveal text="TATTOO ATELIER" className="eyebrow mb-6 block" stagger={0.04} />
+            <CharReveal text="DA NANG TATTOO ATELIER" className="eyebrow mb-6 block" stagger={0.04} />
           </motion.div>
           <motion.h1
             initial={{ opacity: 0 }}
