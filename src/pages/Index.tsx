@@ -171,7 +171,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.6, ease }}
             className="font-body text-base italic text-muted-foreground mt-6"
           >
-            L'art sur la peau
+            Ink the memory | Lưu giữ kỷ niệm đẹp trên làn da
           </motion.p>
         </div>
         <motion.div
