@@ -15,77 +15,77 @@ const clipDirs = ["cl", "cu", "cr"] as const;
 
 const collectionItems = [
   {
-    src: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=800&q=80",
+    src: "/media/1.png",
     title: "Fine Line | Floral Tribe",
     description: "A delicate floral line gracefully flowing along the waist, enhancing natural curves with softness and elegance.\n\nKhóm hoa mảnh mai uốn lượn eo, tôn lên đường cong tự nhiên với vẻ mềm mại và tinh tế.",
   },
   {
-    src: "https://images.unsplash.com/photo-1562962230-16e4623d36e6?w=800&q=80",
+    src: "/media/2.png",
     title: "Blackwork | Shadow Panther",
     description: "A bold black panther, captured in profile with intricate shadows and stark contrast, embodying raw power and silent dominance.\n\nMột chú báo đen ở góc nhìn nghiêng với sắc độ bóng đậm, tương phản sắc nét, toát lên sức mạnh nguyên thủy và uy lực.",
   },
   {
-    src: "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=800&q=80",
+    src: "/media/3.png",
     title: "Vietnamese Unalome Design | Elegant Lotus",
     description: "The lotus, a timeless symbol of Vietnam, represents purity, resilience and gracefulness rising above all.\n\nHoa sen - biểu tượng của Việt Nam, đại diện cho sự thanh khiết, kiên cường và vẻ đẹp thanh cao.",
   },
   {
-    src: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&q=80",
+    src: "/media/4.png",
     title: "Realism | Cupid's Whisper",
     description: "A soft, tender cherub drawing its bow, symbolizing love, innocence and the quiet power of a promise.\n\nThiên thần nhỏ giương cung, biểu tượng của tình yêu, sự thuần khiết và sức mạnh thầm lặng của lời hứa.",
   },
   {
-    src: "https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800&q=80",
+    src: "/media/5.png",
     title: "Fine Line | Sparkle & Motif",
     description: "A subtle shining star adorning the body, shimmering with warmth, confidence and the power of owning your own story.\n\nNgôi sao tinh tế tỏa sáng trên cơ thể, mang lại cảm giác ấm áp, tự tin và sức mạnh của việc làm chủ câu chuyện của chính mình.",
   },
   {
-    src: "https://images.unsplash.com/photo-1590246814883-57c511e76523?w=800&q=80",
+    src: "/media/6.png",
     title: "Blackwork | Third Eye of Light",
     description: "The Eye of Horus, detailed with luminous accents, symbolizing protection, clarity and spiritual strength.\n\nMắt Horus với chi tiết điểm nhấn ánh sáng, biểu tượng cho sự bảo vệ, trí tuệ và sức mạnh tâm linh.",
   },
   {
-    src: "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?w=800&q=80",
+    src: "/media/7.png",
     title: "Lettering | Love Confession",
     description: '"Love you to the moon" — a timeless phrase capturing endless love and deep emotional connection.\n\n"Love you to the moon" - Lời tỏ tình vượt thời gian, thể hiện tình yêu vô tận và sự gắn kết sâu sắc.',
   },
   {
-    src: "https://images.unsplash.com/photo-1554774853-719586f82d77?w=800&q=80",
+    src: "/media/8.png",
     title: "Fine Line | Scarlet Butterflies",
     description: "Two crimson butterflies drifting gently, symbolizing transformation, freedom and the beauty of becoming.\n\nHai chú bướm đỏ bay nhẹ, tượng trưng cho sự lột xác, tự do và vẻ đẹp của sự trưởng thành.",
   },
   {
-    src: "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=800&q=80",
+    src: "/media/9.png",
     title: "Lettering | Creative Vibe",
     description: '"Express yourself" styled in fun fluid typography, reflecting individuality, creativity and personal evolution.\n\n"Express yourself" với kiểu chữ lượn sóng vui nhộn, thể hiện cá tính, sự sáng tạo và hành trình phát triển bản thân.',
   },
   {
-    src: "https://images.unsplash.com/photo-1527576539890-dfa815648363?w=800&q=80",
+    src: "/media/10.png",
     title: "Fine Line | Free Spirit Wings",
     description: "A fusion of a tiny butterfly and lettering, symbolizing independence, self-ownership and freedom of identity.\n\nSự kết hợp giữa bướm nhỏ và dòng chữ, tượng trưng cho sự độc lập, tự chủ và quyền tự do thể hiện bản thân.",
   },
   {
-    src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=800&q=80",
+    src: "/media/11.png",
     title: "Fine Line | Tiny Tulip",
     description: "A minimalist tulip design representing gentle love, elegance and quiet beauty in its simplest form.\n\nHoa tulip nhỏ xinh xắn, tượng trưng cho tình yêu nhẹ nhàng, sự tinh tế và vẻ đẹp giản dị.",
   },
   {
-    src: "https://images.unsplash.com/photo-1533158388-350df81fface?w=800&q=80",
+    src: "/media/12.png",
     title: "Fine Line | Vintage Lily",
     description: "A flowing lily wrapping the body, balancing softness and strength through elegant yet defined lines.\n\nHoa ly ôm theo cơ thể, cân bằng giữa sự mềm mại và sức mạnh thông qua những đường nét thanh tao.",
   },
   {
-    src: "https://images.unsplash.com/photo-1544966503-4d07e3eba5f7?w=800&q=80",
+    src: "/media/14.png",
     title: "Lettering | Live Spirit",
     description: '"Right now" expressed as a statement of freedom, individuality and living in the moment.\n\n"Right now" thể hiện một tuyên ngôn về sự tự do, cá tính và sống hết mình cho hiện tại.',
   },
   {
-    src: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80",
+    src: "/media/15.png",
     title: "Fine Line | Family Ribbon",
     description: "A delicate ribbon carrying meaning beyond years, symbolizing love, connections and memories that last forever.\n\nDải ruy băng mang ý nghĩa vượt thời gian, tượng trưng cho tình yêu, sự gắn kết và những kỷ niệm mãi mãi.",
   },
   {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+    src: "/media/16.png",
     title: "Blackwork | Tribal Heart Crown",
     description: "A bold tribal heart crowned with sharp spikes, expressing passion, protection and fierce individuality.\n\nTrái tim bộ lạc đội vương miện gai góc, thể hiện sự đam mê, bảo vệ và cá tính mạnh mẽ.",
   },
