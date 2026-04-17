@@ -343,9 +343,9 @@ export default function HomePage() {
             <div className="w-16 h-px bg-border mx-auto mt-8" />
           </Reveal>
           <Reveal direction="right" delay={0.5}>
-            <Link to="/process" className="text-link mt-8 inline-block">
-              Discover our portfolio →
-            </Link>
+            <a href="https://www.instagram.com/douces.ink/" target="_blank" rel="noopener noreferrer" className="text-link mt-8 inline-block">
+              Discover our works →
+            </a>
           </Reveal>
         </div>
       </section>
