@@ -335,8 +335,8 @@ export default function HomePage() {
             </blockquote>
           </RevealText>
           <Reveal direction="up" delay={0.3}>
-            <p className="font-body text-sm text-muted-foreground mt-6">
-              HÃY KHÁM PHÁ THÊM QUY TRÌNH THỰC HIỆN MỖI HÌNH XĂM TẠI ĐÂY
+            <p className="font-body text-sm text-muted-foreground mt-6 uppercase tracking-wider">
+              Hân hạnh được để trên bạn 1 kỉ niệm
             </p>
           </Reveal>
           <Reveal direction="scale" delay={0.4}>
