@@ -1,7 +1,7 @@
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.jpg";
+
 
 const navLinks = [
   { label: "Portfolio", href: "/portfolio" },
@@ -33,7 +33,7 @@ export default function Navbar() {
             to="/"
             className="flex items-center gap-2 font-display text-xl tracking-[0.1em] text-foreground"
           >
-            <img src={logo} alt="DOUCES logo" className="h-12 w-auto object-contain" />
+            <img src="/media/LOGO-removebg-preview.png" alt="DOUCES logo" className="h-12 w-auto object-contain invert" />
             DOUCES
           </Link>
 
