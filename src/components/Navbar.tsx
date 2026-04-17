@@ -33,7 +33,7 @@ export default function Navbar() {
             to="/"
             className="flex items-center gap-2 font-display text-xl tracking-[0.1em] text-foreground"
           >
-            <img src="/media/0.png" alt="DOUCES logo" className="w-8 h-8 object-contain" />
+            <img src="/media/logo.png" alt="DOUCES logo" className="h-12 w-auto object-contain" />
             DOUCES
           </Link>
 
