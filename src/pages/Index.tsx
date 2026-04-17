@@ -365,12 +365,12 @@ export default function HomePage() {
             </p>
           </Reveal>
           <Reveal direction="up" delay={0.25} className="mt-10 flex flex-col sm:flex-row items-start gap-4">
-            <Link to="/booking" className="btn-primary">
+            <a href="https://www.instagram.com/douces.ink/" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Book an appointment
-            </Link>
+            </a>
             <Reveal direction="right" delay={0.35}>
-              <a href="https://www.instagram.com/douces.ink/" target="_blank" rel="noopener noreferrer" className="text-link">
-                Or contact us directly →
+              <a href="https://www.facebook.com/340012192536846" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                Contact via Facebook
               </a>
             </Reveal>
           </Reveal>
