@@ -49,9 +49,9 @@ export default function Footer() {
             <h4 className="eyebrow mb-6">Follow</h4>
             <div className="space-y-3">
               {[
-                { name: "Instagram", url: "https://www.instagram.com/wolfsox.ins" },
+                { name: "Instagram", url: "https://www.instagram.com/douces.ink/" },
                 { name: "TikTok", url: "https://www.tiktok.com/@doucesink.danang" },
-                { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61561304925962" },
+                { name: "Facebook", url: "https://www.facebook.com/340012192536846" },
               ].map((item) => (
                 <a
                   key={item.name}

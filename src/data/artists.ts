@@ -13,7 +13,7 @@ export const artists: Artist[] = [
   {
     slug: "maelle-durand",
     name: "Maëlle Durand",
-    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80",
+    photo: "/media/16.png",
     specialty: "Fine Line & Botanical",
     experience: "8 years",
     location: "Paris, FR",
@@ -30,7 +30,7 @@ export const artists: Artist[] = [
   {
     slug: "ryo-takahashi",
     name: "Ryo Takahashi",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    photo: "/media/Douces1.png",
     specialty: "Japanese Traditional",
     experience: "12 years",
     location: "Tokyo → Paris",

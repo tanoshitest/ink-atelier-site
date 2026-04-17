@@ -8,7 +8,7 @@ import {
 } from "@/components/AnimationUtils";
 import { artists } from "@/data/artists";
 import { portfolioItems } from "@/data/portfolio";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 const ease = [0.16, 1, 0.3, 1];
 const clipDirs = ["cl", "cu", "cr"] as const;
@@ -85,7 +85,7 @@ const collectionItems = [
     description: "A delicate ribbon carrying meaning beyond years, symbolizing love, connections and memories that last forever.\n\nDải ruy băng mang ý nghĩa vượt thời gian, tượng trưng cho tình yêu, sự gắn kết và những kỷ niệm mãi mãi.",
   },
   {
-    src: "/media/16.png",
+    src: "/media/15.png",
     title: "Blackwork | Tribal Heart Crown",
     description: "A bold tribal heart crowned with sharp spikes, expressing passion, protection and fierce individuality.\n\nTrái tim bộ lạc đội vương miện gai góc, thể hiện sự đam mê, bảo vệ và cá tính mạnh mẽ.",
   },
@@ -96,11 +96,21 @@ const collectionItems = [
 function FineLineCarousel() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const go = useCallback((dir: number) => {
     setDirection(dir);
     setCurrent((prev) => (prev + dir + collectionItems.length) % collectionItems.length);
   }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setDirection(1);
+      setCurrent((prev) => (prev + 1) % collectionItems.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
 
   const item = collectionItems[current];
 
@@ -111,7 +121,11 @@ function FineLineCarousel() {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+    <div
+      className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Image */}
       <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-muted">
         <AnimatePresence mode="wait" custom={direction}>
@@ -195,7 +209,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src={studioBg}
+            src="/media/IMG_1019 (1).PNG"
             alt="DOUCES Studio"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -355,7 +369,7 @@ export default function HomePage() {
               Book an appointment
             </Link>
             <Reveal direction="right" delay={0.35}>
-              <a href="mailto:hello@douces.ink" className="text-link">
+              <a href="https://www.instagram.com/douces.ink/" target="_blank" rel="noopener noreferrer" className="text-link">
                 Or contact us directly →
               </a>
             </Reveal>
@@ -370,6 +384,89 @@ export default function HomePage() {
           />
         </ClipReveal>
       </section>
+      {/* Map Section */}
+      <section className="relative w-full h-[420px] md:h-[500px] overflow-hidden">
+        {/* Google Maps Embed */}
+        <iframe
+          title="Douces Ink Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30671.815726867168!2d108.1892146!3d16.06668505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219eee4d5294f%3A0xe15bb31335f23f1e!2sdouces.ink!5e0!3m2!1svi!2svn!4v1776250739196!5m2!1svi!2svn"
+          width="100%"
+          height="100%"
+          style={{ border: 0, filter: "grayscale(20%) contrast(1.05)" }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="absolute inset-0 w-full h-full"
+        />
+
+        {/* Info Card */}
+        <div className="absolute top-6 left-6 z-10 bg-background/95 backdrop-blur-md rounded-xl shadow-2xl p-5 max-w-[260px] border border-border">
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <h3 className="font-display text-lg font-semibold text-foreground leading-tight">douces.ink</h3>
+            <a
+              href="https://maps.app.goo.gl/2QN6sZ3mMM2n1DPLA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors mt-0.5"
+              aria-label="Open in Google Maps"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+          {/* Rating */}
+          <div className="flex items-center gap-1.5 mb-3">
+            <span className="text-sm font-medium text-foreground">5.0</span>
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              ))}
+            </div>
+            <span className="text-xs text-muted-foreground">(120)</span>
+          </div>
+
+          <div className="space-y-2 text-sm">
+            {/* Address */}
+            <div className="flex items-start gap-2 text-muted-foreground">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0 text-red-500"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Douces Ink, Thanh Khê, Đà Nẵng</span>
+            </div>
+
+            {/* Phone */}
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-red-500"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:0362755400" className="hover:text-foreground transition-colors">0362755400</a>
+            </div>
+
+            {/* Hours */}
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>T2–CN: 14:00 – 02:00</span>
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex gap-2 mt-4">
+            <a
+              href="https://maps.app.goo.gl/2QN6sZ3mMM2n1DPLA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center text-xs font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors px-3 py-2 rounded-lg"
+            >
+              Chỉ đường
+            </a>
+            <a
+              href="https://maps.app.goo.gl/2QN6sZ3mMM2n1DPLA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center text-xs font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-colors px-3 py-2 rounded-lg"
+            >
+              Xem Google Maps
+            </a>
+          </div>
+        </div>
+      </section>
     </AnimatedPage>
+
   );
 }
