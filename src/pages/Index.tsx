@@ -108,7 +108,7 @@ function FineLineCarousel() {
     const timer = setInterval(() => {
       setDirection(1);
       setCurrent((prev) => (prev + 1) % collectionItems.length);
-    }, 4000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [isPaused]);
 
