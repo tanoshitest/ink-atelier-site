@@ -364,13 +364,13 @@ export default function HomePage() {
               Every tattoo begins with a conversation. Tell us your story, and we'll help bring your vision to life.
             </p>
           </Reveal>
-          <Reveal direction="up" delay={0.25} className="mt-10 flex flex-col sm:flex-row items-start gap-4">
-            <a href="https://www.instagram.com/douces.ink/" target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <Reveal direction="up" delay={0.25} className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+            <a href="https://www.instagram.com/douces.ink/" target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-48 text-center">
               Book an appointment
             </a>
-            <Reveal direction="right" delay={0.35}>
-              <a href="https://www.facebook.com/340012192536846" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Contact via Facebook
+            <Reveal direction="right" delay={0.35} className="w-full sm:w-auto">
+              <a href="https://www.facebook.com/340012192536846" target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-48 text-center">
+                CONTACT
               </a>
             </Reveal>
           </Reveal>
