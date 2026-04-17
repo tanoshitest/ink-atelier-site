@@ -410,7 +410,7 @@ export default function HomePage() {
         />
 
         {/* Info Card */}
-        <div className="absolute top-6 left-6 z-10 bg-background/95 backdrop-blur-md rounded-xl shadow-2xl p-5 max-w-[260px] border border-border">
+        <div className="absolute top-6 right-6 z-10 bg-background/95 backdrop-blur-md rounded-xl shadow-2xl p-5 max-w-[260px] border border-border">
           <div className="flex items-start justify-between gap-2 mb-1">
             <h3 className="font-display text-lg font-semibold text-foreground leading-tight">douces.ink</h3>
             <a
