@@ -32,17 +32,12 @@ const collectionItems = [
   {
     src: "/media/4.png",
     title: "Realism | Cupid's Whisper",
-    description: "A soft, tender cherub drawing its bow, symbolizing love, innocence and the quiet power of a promise.\n\nThiên thần nhỏ giương cung, biểu tượng của tình yêu, sự thuần khiết và sức mạnh thầm lặng của lời hứa.",
+    description: "A soft, lifelike cherub drawing its bow, symbolizing love, innocence and the quiet power of emotions.\n\nThiên thần nhỏ giương cung, biểu trưng cho tình yêu, sự thuần khiết và những cảm xúc sâu lắng",
   },
   {
     src: "/media/5.png",
     title: "Fine Line | Sparkle & Motif",
     description: "A subtle shining star adorning the body, shimmering with warmth, confidence and the power of owning your own story.\n\nNgôi sao tinh tế tỏa sáng trên cơ thể, mang lại cảm giác ấm áp, tự tin và sức mạnh của việc làm chủ câu chuyện của chính mình.",
-  },
-  {
-    src: "/media/6.png",
-    title: "Blackwork | Third Eye of Light",
-    description: "The Eye of Horus, detailed with luminous accents, symbolizing protection, clarity and spiritual strength.\n\nMắt Horus với chi tiết điểm nhấn ánh sáng, biểu tượng cho sự bảo vệ, trí tuệ và sức mạnh tâm linh.",
   },
   {
     src: "/media/7.png",
@@ -73,21 +68,6 @@ const collectionItems = [
     src: "/media/12.png",
     title: "Fine Line | Vintage Lily",
     description: "A flowing lily wrapping the body, balancing softness and strength through elegant yet defined lines.\n\nHoa ly ôm theo cơ thể, cân bằng giữa sự mềm mại và sức mạnh thông qua những đường nét thanh tao.",
-  },
-  {
-    src: "/media/14.png",
-    title: "Lettering | Live Spirit",
-    description: '"Right now" expressed as a statement of freedom, individuality and living in the moment.\n\n"Right now" thể hiện một tuyên ngôn về sự tự do, cá tính và sống hết mình cho hiện tại.',
-  },
-  {
-    src: "/media/15.png",
-    title: "Fine Line | Family Ribbon",
-    description: "A delicate ribbon carrying meaning beyond years, symbolizing love, connections and memories that last forever.\n\nDải ruy băng mang ý nghĩa vượt thời gian, tượng trưng cho tình yêu, sự gắn kết và những kỷ niệm mãi mãi.",
-  },
-  {
-    src: "/media/15.png",
-    title: "Blackwork | Tribal Heart Crown",
-    description: "A bold tribal heart crowned with sharp spikes, expressing passion, protection and fierce individuality.\n\nTrái tim bộ lạc đội vương miện gai góc, thể hiện sự đam mê, bảo vệ và cá tính mạnh mẽ.",
   },
 ];
 
@@ -170,6 +150,7 @@ function FineLineCarousel() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
+            className="min-h-[140px] md:min-h-[160px] flex flex-col justify-end"
           >
             <h3 className="font-display text-3xl md:text-4xl text-foreground font-normal">
               {item.title}
@@ -181,7 +162,7 @@ function FineLineCarousel() {
         </AnimatePresence>
 
         {/* Dots */}
-        <div className="flex items-center gap-2 mt-8">
+        <div className="flex items-center gap-2 mt-6 md:mt-8">
           {collectionItems.map((_, i) => (
             <button
               key={i}
@@ -283,7 +264,7 @@ export default function HomePage() {
         </div>
         <div
           ref={artistsRef}
-          className="hide-scrollbar overflow-x-auto snap-x snap-mandatory flex justify-center gap-6 px-6 lg:px-12 pb-4 md:gap-6"
+          className="flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-6 md:gap-8 px-6 lg:px-12 pb-4"
         >
           {artists.map((artist, i) => (
             <motion.div
@@ -292,10 +273,10 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, delay: i * 0.08, ease }}
-              className="snap-center flex-shrink-0 w-[85vw] md:w-[300px]"
+              className="w-full max-w-[320px] md:max-w-none md:w-[300px]"
             >
-              <Link to={`/artists/${artist.slug}`} className="group block">
-                <div className="overflow-hidden">
+              <Link to={`/artists/${artist.slug}`} className="group block text-center md:text-left">
+                <div className="overflow-hidden rounded-lg">
                   <img
                     src={artist.photo}
                     alt={artist.name}
@@ -304,10 +285,10 @@ export default function HomePage() {
                     style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
                   />
                 </div>
-                <h3 className="font-display text-2xl text-foreground mt-4 transition-colors duration-300 group-hover:text-accent">
+                <h3 className="font-display text-2xl text-foreground mt-6 transition-colors duration-300 group-hover:text-accent">
                   {artist.name}
                 </h3>
-                <p className="font-body text-[13px] text-muted-foreground mt-1">
+                <p className="font-body text-[13px] text-muted-foreground mt-2 md:mt-1">
                   {artist.specialty}
                 </p>
               </Link>
@@ -351,8 +332,8 @@ export default function HomePage() {
       </section>
 
       {/* Booking CTA */}
-      <section className="min-h-screen grid grid-cols-1 lg:grid-cols-2">
-        <div className="flex flex-col justify-center px-6 lg:px-16 py-24 lg:py-0">
+      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 section-spacing">
+        <div className="flex flex-col items-center max-w-[600px] mx-auto">
           <Eyebrow>BEGIN YOUR JOURNEY</Eyebrow>
           <RevealText className="mt-4">
             <h2 className="font-display text-4xl md:text-5xl font-normal text-foreground leading-tight tracking-[-0.03em]">
@@ -360,20 +341,20 @@ export default function HomePage() {
             </h2>
           </RevealText>
           <Reveal direction="up" delay={0.15}>
-            <p className="font-body text-base text-secondary-foreground/80 mt-6 max-w-[400px] leading-relaxed">
+            <p className="font-body text-base text-secondary-foreground/80 mt-6 leading-relaxed">
               Every tattoo begins with a conversation. Tell us your story, and we'll help bring your vision to life.
             </p>
           </Reveal>
-          <Reveal direction="up" delay={0.25} className="mt-10 flex flex-row items-center gap-4">
+          <Reveal direction="up" delay={0.25} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
             <a 
               href="https://www.instagram.com/douces.ink/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn-primary flex-1 sm:flex-none sm:w-48 h-16 flex items-center justify-center text-center leading-tight"
+              className="btn-primary w-full sm:w-48 h-16 flex items-center justify-center text-center leading-tight"
             >
-              Book an<br />appointment
+              Book Appointment
             </a>
-            <Reveal direction="right" delay={0.35} className="flex-1 sm:flex-none">
+            <Reveal direction="right" delay={0.35} className="w-full sm:w-auto">
               <a 
                 href="https://www.facebook.com/340012192536846" 
                 target="_blank" 
@@ -385,14 +366,6 @@ export default function HomePage() {
             </Reveal>
           </Reveal>
         </div>
-        <ClipReveal direction="cr" className="relative min-h-[50vh] lg:min-h-full">
-          <img
-            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1000&q=80"
-            alt="Tattoo studio interior"
-            loading="lazy"
-            className="w-full h-full object-cover"
-          />
-        </ClipReveal>
       </section>
       {/* Map Section */}
       <section className="relative w-full h-[420px] md:h-[500px] overflow-hidden">

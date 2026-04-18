@@ -34,7 +34,7 @@ export const artists: Artist[] = [
     specialty: "Fine Line & Blackwork",
     experience: "12 years",
     location: "Tokyo → Paris",
-    bio: "Douces brings the discipline of traditional Japanese tattooing to contemporary skin. His bold compositions honor centuries of irezumi while pushing into modern territory.",
+    bio: "Douces focuses on minimalist tattooing and blackwork, translating bold ideas into refined, small-scale designs. His work emphasizes clean composition, strong contrast, and lasting visual impact—where simplicity meets precision.",
     portfolio: [
       "https://images.unsplash.com/photo-1562962230-16e4623d36e6?w=1000&q=80",
       "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=1000&q=80",

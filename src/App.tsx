@@ -48,7 +48,7 @@ function SocialIcons() {
   ];
 
   return (
-    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col shadow-xl">
+    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col shadow-xl">
       {socials.map((s, i) => (
         <a
           key={s.label}
