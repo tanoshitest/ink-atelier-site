@@ -301,7 +301,7 @@ export default function HomePage() {
       <section className="min-h-screen flex items-center justify-center section-spacing relative">
         <div className="absolute inset-0 opacity-40">
           <img
-            src="/media/IMG_1637.PNG"
+            src="/media/IMG_1637.webp"
             alt="Philosophy Background"
             className="w-full h-full object-cover"
           />
