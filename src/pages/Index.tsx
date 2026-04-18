@@ -318,11 +318,11 @@ export default function HomePage() {
 
       {/* Philosophy */}
       <section className="min-h-screen flex items-center justify-center section-spacing relative">
-        <div className="absolute inset-0 opacity-[0.08]">
+        <div className="absolute inset-0 opacity-40">
           <img
-            src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1920&q=80"
-            alt=""
-            className="w-full h-full object-cover blur-sm"
+            src="/media/IMG_1637.PNG"
+            alt="Philosophy Background"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="relative z-10 text-center max-w-[800px] mx-auto px-6">
