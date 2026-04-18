@@ -264,53 +264,34 @@ export default function HomePage() {
         </div>
         <div
           ref={artistsRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 px-6 lg:px-12 pb-4"
+          className="flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-6 md:gap-8 px-6 lg:px-12 pb-4"
         >
-          {[
-            { type: "artist", data: artists[0] }, // Esther
-            { type: "image", src: "/media/IMG_1501.jpg", alt: "Artwork 1501" },
-            { type: "image", src: "/media/IMG_1633.PNG", alt: "Artwork 1633" },
-            { type: "image", src: "/media/IMG_1638.jpg", alt: "Artwork 1638" },
-            { type: "image", src: "/media/IMG_1745.PNG", alt: "Artwork 1745" },
-            { type: "artist", data: artists[1] }, // Douces
-          ].map((item, i) => (
+          {artists.map((artist, i) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={artist.slug}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: i * 0.1, ease }}
-              className="w-full flex-shrink-0 flex flex-col justify-start"
+              transition={{ duration: 0.7, delay: i * 0.08, ease }}
+              className="w-full max-w-[320px] md:max-w-none md:w-[300px]"
             >
-              {item.type === "artist" ? (
-                <Link to={`/artists/${item.data.slug}`} className="group block text-center md:text-left h-full">
-                  <div className="overflow-hidden rounded-lg">
-                    <img
-                      src={item.data.photo}
-                      alt={item.data.name}
-                      loading="lazy"
-                      className="w-full aspect-[3/4] object-cover transition-all duration-[600ms] group-hover:brightness-110"
-                      style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
-                    />
-                  </div>
-                  <h3 className="font-display text-2xl text-foreground mt-6 transition-colors duration-300 group-hover:text-accent">
-                    {item.data.name}
-                  </h3>
-                  <p className="font-body text-[13px] text-muted-foreground mt-2 md:mt-1">
-                    {item.data.specialty}
-                  </p>
-                </Link>
-              ) : (
+              <Link to={`/artists/${artist.slug}`} className="group block text-center md:text-left h-full">
                 <div className="overflow-hidden rounded-lg">
                   <img
-                    src={item.src}
-                    alt={item.alt}
+                    src={artist.photo}
+                    alt={artist.name}
                     loading="lazy"
-                    className="w-full aspect-[3/4] object-cover hover:scale-105 transition-transform duration-[600ms]"
+                    className="w-full aspect-[3/4] object-cover transition-all duration-[600ms] group-hover:brightness-110"
                     style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
                   />
                 </div>
-              )}
+                <h3 className="font-display text-2xl text-foreground mt-6 transition-colors duration-300 group-hover:text-accent">
+                  {artist.name}
+                </h3>
+                <p className="font-body text-[13px] text-muted-foreground mt-2 md:mt-1">
+                  {artist.specialty}
+                </p>
+              </Link>
             </motion.div>
           ))}
         </div>
