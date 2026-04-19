@@ -8,9 +8,16 @@ export interface PortfolioItem {
 }
 
 export const portfolioItems: PortfolioItem[] = [
+  // FEATURED IN "ALL" (Top 6 explicitly ordered)
+  { id: 47, src: "/media/bo-anh-20/2.png", title: "Realism #2", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
+  { id: 2, src: "/media/bo-anh-18/2.png", title: "Sexy Placement #2", artist: "DOUCES Studio", style: "Sexy Placement", aspect: "3/4" },
+  { id: 51, src: "/media/bo-anh-20/6.png", title: "Realism #6", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
+  { id: 97, src: "/media/bo-anh-23/2.png", title: "Vietnamese Inspired #2", artist: "DOUCES Studio", style: "Vietnamese Inspired", aspect: "3/4" },
+  { id: 96, src: "/media/bo-anh-23/1.png", title: "Vietnamese Inspired #1", artist: "DOUCES Studio", style: "Vietnamese Inspired", aspect: "3/4" },
+  { id: 57, src: "/media/bo-anh-21/2.png", title: "Lettering #2", artist: "DOUCES Studio", style: "Lettering", aspect: "3/4" },
+
   // bo-anh-18 → Sexy Placement (26 ảnh)
   { id: 1, src: "/media/bo-anh-18/1.png", title: "Sexy Placement #1", artist: "DOUCES Studio", style: "Sexy Placement", aspect: "3/4" },
-  { id: 2, src: "/media/bo-anh-18/2.png", title: "Sexy Placement #2", artist: "DOUCES Studio", style: "Sexy Placement", aspect: "3/4" },
   { id: 3, src: "/media/bo-anh-18/3.png", title: "Sexy Placement #3", artist: "DOUCES Studio", style: "Sexy Placement", aspect: "3/4" },
   { id: 4, src: "/media/bo-anh-18/4.png", title: "Sexy Placement #4", artist: "DOUCES Studio", style: "Sexy Placement", aspect: "3/4" },
   { id: 5, src: "/media/bo-anh-18/5.png", title: "Sexy Placement #5", artist: "DOUCES Studio", style: "Sexy Placement", aspect: "3/4" },
@@ -37,6 +44,7 @@ export const portfolioItems: PortfolioItem[] = [
   { id: 26, src: "/media/bo-anh-18/26.png", title: "Sexy Placement #26", artist: "DOUCES Studio", style: "Sexy Placement", aspect: "3/4" },
 
   // bo-anh-19 → Blackwork & Fine Line (19 ảnh)
+  { id: 101, src: "/media/bird_arrow.webp", title: "Blackwork & Fine Line #20", artist: "DOUCES Studio", style: "Blackwork & Fine Line", aspect: "3/4" },
   { id: 27, src: "/media/bo-anh-19/1.png", title: "Blackwork & Fine Line #1", artist: "DOUCES Studio", style: "Blackwork & Fine Line", aspect: "3/4" },
   { id: 28, src: "/media/bo-anh-19/2.png", title: "Blackwork & Fine Line #2", artist: "DOUCES Studio", style: "Blackwork & Fine Line", aspect: "3/4" },
   { id: 29, src: "/media/bo-anh-19/3.png", title: "Blackwork & Fine Line #3", artist: "DOUCES Studio", style: "Blackwork & Fine Line", aspect: "3/4" },
@@ -59,11 +67,9 @@ export const portfolioItems: PortfolioItem[] = [
 
   // bo-anh-20 → Realism (10 ảnh)
   { id: 46, src: "/media/bo-anh-20/1.png", title: "Realism #1", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
-  { id: 47, src: "/media/bo-anh-20/2.png", title: "Realism #2", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
   { id: 48, src: "/media/bo-anh-20/3.png", title: "Realism #3", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
   { id: 49, src: "/media/bo-anh-20/4.png", title: "Realism #4", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
   { id: 50, src: "/media/bo-anh-20/5.png", title: "Realism #5", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
-  { id: 51, src: "/media/bo-anh-20/6.png", title: "Realism #6", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
   { id: 52, src: "/media/bo-anh-20/7.png", title: "Realism #7", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
   { id: 53, src: "/media/bo-anh-20/8.png", title: "Realism #8", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
   { id: 54, src: "/media/bo-anh-20/9.png", title: "Realism #9", artist: "DOUCES Studio", style: "Realism", aspect: "3/4" },
@@ -71,7 +77,6 @@ export const portfolioItems: PortfolioItem[] = [
 
   // bo-anh-21 → Lettering (22 ảnh)
   { id: 56, src: "/media/bo-anh-21/1.png", title: "Lettering #1", artist: "DOUCES Studio", style: "Lettering", aspect: "3/4" },
-  { id: 57, src: "/media/bo-anh-21/2.png", title: "Lettering #2", artist: "DOUCES Studio", style: "Lettering", aspect: "3/4" },
   { id: 58, src: "/media/bo-anh-21/3.png", title: "Lettering #3", artist: "DOUCES Studio", style: "Lettering", aspect: "3/4" },
   { id: 59, src: "/media/bo-anh-21/4.png", title: "Lettering #4", artist: "DOUCES Studio", style: "Lettering", aspect: "3/4" },
   { id: 60, src: "/media/bo-anh-21/5.png", title: "Lettering #5", artist: "DOUCES Studio", style: "Lettering", aspect: "3/4" },
@@ -114,8 +119,6 @@ export const portfolioItems: PortfolioItem[] = [
   { id: 95, src: "/media/bo-anh-22/18.png", title: "Cute & Color #18", artist: "DOUCES Studio", style: "Cute & Color", aspect: "3/4" },
 
   // bo-anh-23 → Vietnamese Inspired (5 ảnh)
-  { id: 96, src: "/media/bo-anh-23/1.png", title: "Vietnamese Inspired #1", artist: "DOUCES Studio", style: "Vietnamese Inspired", aspect: "3/4" },
-  { id: 97, src: "/media/bo-anh-23/2.png", title: "Vietnamese Inspired #2", artist: "DOUCES Studio", style: "Vietnamese Inspired", aspect: "3/4" },
   { id: 98, src: "/media/bo-anh-23/3.png", title: "Vietnamese Inspired #3", artist: "DOUCES Studio", style: "Vietnamese Inspired", aspect: "3/4" },
   { id: 99, src: "/media/bo-anh-23/4.png", title: "Vietnamese Inspired #4", artist: "DOUCES Studio", style: "Vietnamese Inspired", aspect: "3/4" },
   { id: 100, src: "/media/bo-anh-23/5.png", title: "Vietnamese Inspired #5", artist: "DOUCES Studio", style: "Vietnamese Inspired", aspect: "3/4" },

@@ -66,9 +66,9 @@ export default function PortfolioPage() {
             </div>
           </Reveal>
 
-          {/* Masonry grid */}
+          {/* Main grid */}
           <LayoutGroup>
-            <motion.div layout className="columns-1 md:columns-2 lg:columns-3 gap-1.5">
+            <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5">
               <AnimatePresence mode="popLayout">
                 {filtered.map((item, i) => (
                   <motion.div
@@ -78,7 +78,7 @@ export default function PortfolioPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, ease }}
-                    className="mb-1.5 break-inside-avoid"
+                    className="relative"
                   >
                     <Reveal direction="up" delay={(i % 6) * 0.06}>
                       <button
