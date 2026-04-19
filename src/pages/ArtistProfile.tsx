@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { AnimatedPage, RevealText, RevealImage } from "@/components/AnimationUtils";
+import { AnimatedPage, RevealText, Reveal } from "@/components/AnimationUtils";
 import { artists } from "@/data/artists";
 
 const ease = [0.16, 1, 0.3, 1];
@@ -43,9 +43,11 @@ export default function ArtistProfile() {
           </Link>
 
           <div className="mt-12" />
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-3">
             {artist.portfolio.map((img, i) => (
-              <img key={i} src={img} alt="" loading="lazy" className="w-full aspect-square object-cover" />
+              <Reveal key={i} delay={i * 0.05} direction="up">
+                <img src={img} alt="" loading="lazy" className="w-full aspect-square object-cover rounded-md" />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -75,20 +77,22 @@ export default function ArtistProfile() {
         </div>
 
         {/* Right — gallery grid */}
-        <div className="grid grid-cols-2 gap-8">
-          {artist.portfolio.map((img, i) => (
-            <RevealImage key={i} delay={i * 0.05}>
-              <div className="overflow-hidden rounded-lg aspect-[3/4]">
-                <img
-                  src={img}
-                  alt=""
-                  loading="lazy"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-[600ms]"
-                  style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
-                />
-              </div>
-            </RevealImage>
-          ))}
+        <div className="px-4">
+          <div className="grid grid-cols-2 gap-6">
+            {artist.portfolio.map((img, i) => (
+              <Reveal key={i} delay={i * 0.05} direction="up">
+                <div className="overflow-hidden rounded-lg aspect-[3/4] bg-secondary/10">
+                  <img
+                    src={img}
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-[800ms] ease-out"
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <div className="h-24" />
         </div>
       </div>
     </AnimatedPage>
