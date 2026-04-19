@@ -30,9 +30,19 @@ const collectionItems = [
     description: "The lotus, a timeless symbol of Vietnam, represents purity, resilience and gracefulness rising above all.\n\nHoa sen - biểu tượng của Việt Nam, đại diện cho sự thanh khiết, kiên cường và vẻ đẹp thanh cao.",
   },
   {
-    src: "/media/4.png",
+    src: "/media/IMG_1745.webp",
+    title: "Lettering | Body Flow Script",
+    description: "\"Touch my skin, feel my story\" — a flowing phrase placed along the body, enhancing natural curves while inviting a deeper, intimate connection beyond words.\n\nCâu chữ uốn theo đường cong cơ thể, tôn lên vẻ quyến rũ và gợi mở một câu chuyện đầy cảm xúc, không cần lời nói",
+  },
+  {
+    src: "/media/IMG_1638.webp",
     title: "Realism | Cupid's Whisper",
     description: "A soft, lifelike cherub drawing its bow, symbolizing love, innocence and the quiet power of emotions.\n\nThiên thần nhỏ giương cung, biểu trưng cho tình yêu, sự thuần khiết và những cảm xúc sâu lắng",
+  },
+  {
+    src: "/media/IMG_1501.webp",
+    title: "Fine Line | Ocean Whisper",
+    description: "A delicate wave flowing beneath the chest, softly tracing the body's natural curve, symbolizing calmness, freedom and the quiet strength within.\n\nHình sóng biển mảnh nhẹ uốn theo chân ngực, ôm trọn đường cong cơ thể, tượng trưng cho sự bình yên, tự do và nội lực sâu bên trong",
   },
   {
     src: "/media/5.png",

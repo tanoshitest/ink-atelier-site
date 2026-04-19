@@ -16,7 +16,7 @@ const slideVariants = {
 const styleOptions = ["Fine Line", "Blackwork", "Japanese", "Watercolor", "Geometric", "Traditional"];
 const placementOptions = ["Arm", "Back", "Chest", "Leg", "Ribs", "Neck", "Hand", "Finger", "Other"];
 const sizeOptions = ["Small (< 5cm)", "Medium (5-15cm)", "Large (15-30cm)", "Extra Large (30cm+)"];
-const timeSlots = ["10:00", "11:30", "14:00", "15:30", "17:00"];
+const timeSlots = ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"];
 
 const formRowDir = ["up", "left", "right"] as const;
 
@@ -33,10 +33,9 @@ export default function BookingPage() {
   const [selectedDate, setSelectedDate] = useState<number | null>(null);
   const [selectedTime, setSelectedTime] = useState("");
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [social, setSocial] = useState("");
   const [phone, setPhone] = useState("");
   const [medical, setMedical] = useState("");
-  const [depositAgreed, setDepositAgreed] = useState(false);
 
   const next = () => { setDir(1); setStep((s) => Math.min(s + 1, 3)); };
   const prev = () => { setDir(-1); setStep((s) => Math.max(s - 1, 0)); };
@@ -47,7 +46,7 @@ export default function BookingPage() {
     d.setDate(d.getDate() + i + 1);
     return d;
   });
-  const isAvailable = (d: Date) => d.getDay() !== 0 && d.getDay() !== 1;
+  const isAvailable = (d: Date) => true;
 
   if (submitted) {
     return (
@@ -235,7 +234,7 @@ export default function BookingPage() {
                     <div className="space-y-8">
                       {[
                         { label: "Name", type: "text", value: name, set: setName, ph: "Your full name" },
-                        { label: "Email", type: "email", value: email, set: setEmail, ph: "your@email.com" },
+                        { label: "Instagram / Facebook / Tiktok", type: "text", value: social, set: setSocial, ph: "@yourname" },
                         { label: "Phone", type: "tel", value: phone, set: setPhone, ph: "+33 ..." },
                       ].map((field, i) => (
                         <Reveal key={field.label} direction={formRowDir[i % 3]} delay={i * 0.08}>
@@ -250,14 +249,6 @@ export default function BookingPage() {
                           <label className="eyebrow block mb-3">Medical notes</label>
                           <textarea value={medical} onChange={(e) => setMedical(e.target.value)} placeholder="Any medical conditions or allergies we should know about?" rows={3} className="input-dark border border-border w-full p-4 resize-none" />
                         </div>
-                      </Reveal>
-                      <Reveal direction="left" delay={0.3}>
-                        <label className="flex items-start gap-3 cursor-pointer">
-                          <input type="checkbox" checked={depositAgreed} onChange={(e) => setDepositAgreed(e.target.checked)} className="mt-1 accent-foreground" />
-                          <span className="font-body text-sm text-muted-foreground">
-                            I understand that a 50€ deposit is required to confirm my booking
-                          </span>
-                        </label>
                       </Reveal>
                     </div>
                   </div>
