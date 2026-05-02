@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -15,6 +15,16 @@ import Booking from "@/pages/Booking";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function SocialIcons() {
   const socials = [
@@ -99,6 +109,7 @@ const App = () => {
       <TooltipProvider>
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Preloader onComplete={handleComplete} />
           {ready && (
             <>

@@ -15,17 +15,17 @@ const clipDirs = ["cl", "cu", "cr"] as const;
 
 const collectionItems = [
   {
-    src: "/media/1.png",
+    src: "/media/1.webp",
     title: "Fine Line | Floral Tribe",
     description: "A delicate floral line gracefully flowing along the waist, enhancing natural curves with softness and elegance.\n\nKhóm hoa mảnh mai uốn lượn eo, tôn lên đường cong tự nhiên với vẻ mềm mại và tinh tế.",
   },
   {
-    src: "/media/2.png",
+    src: "/media/2.webp",
     title: "Blackwork | Shadow Panther",
     description: "A bold black panther, captured in profile with intricate shadows and stark contrast, embodying raw power and silent dominance.\n\nMột chú báo đen ở góc nhìn nghiêng với sắc độ bóng đậm, tương phản sắc nét, toát lên sức mạnh nguyên thủy và uy lực.",
   },
   {
-    src: "/media/3.png",
+    src: "/media/3.webp",
     title: "Vietnamese Unalome Design | Elegant Lotus",
     description: "The lotus, a timeless symbol of Vietnam, represents purity, resilience and gracefulness rising above all.\n\nHoa sen - biểu tượng của Việt Nam, đại diện cho sự thanh khiết, kiên cường và vẻ đẹp thanh cao.",
   },
@@ -45,37 +45,37 @@ const collectionItems = [
     description: "A delicate wave flowing beneath the chest, softly tracing the body's natural curve, symbolizing calmness, freedom and the quiet strength within.\n\nHình sóng biển mảnh nhẹ uốn theo chân ngực, ôm trọn đường cong cơ thể, tượng trưng cho sự bình yên, tự do và nội lực sâu bên trong",
   },
   {
-    src: "/media/5.png",
+    src: "/media/5.webp",
     title: "Fine Line | Sparkle & Motif",
     description: "A subtle shining star adorning the body, shimmering with warmth, confidence and the power of owning your own story.\n\nNgôi sao tinh tế tỏa sáng trên cơ thể, mang lại cảm giác ấm áp, tự tin và sức mạnh của việc làm chủ câu chuyện của chính mình.",
   },
   {
-    src: "/media/7.png",
+    src: "/media/7.webp",
     title: "Lettering | Love Confession",
     description: '"Love you to the moon" — a timeless phrase capturing endless love and deep emotional connection.\n\n"Love you to the moon" - Lời tỏ tình vượt thời gian, thể hiện tình yêu vô tận và sự gắn kết sâu sắc.',
   },
   {
-    src: "/media/8.png",
+    src: "/media/8.webp",
     title: "Fine Line | Scarlet Butterflies",
     description: "Two crimson butterflies drifting gently, symbolizing transformation, freedom and the beauty of becoming.\n\nHai chú bướm đỏ bay nhẹ, tượng trưng cho sự lột xác, tự do và vẻ đẹp của sự trưởng thành.",
   },
   {
-    src: "/media/9.png",
+    src: "/media/9.webp",
     title: "Lettering | Creative Vibe",
     description: '"Express yourself" styled in fun fluid typography, reflecting individuality, creativity and personal evolution.\n\n"Express yourself" với kiểu chữ lượn sóng vui nhộn, thể hiện cá tính, sự sáng tạo và hành trình phát triển bản thân.',
   },
   {
-    src: "/media/10.png",
+    src: "/media/10.webp",
     title: "Fine Line | Free Spirit Wings",
     description: "A fusion of a tiny butterfly and lettering, symbolizing independence, self-ownership and freedom of identity.\n\nSự kết hợp giữa bướm nhỏ và dòng chữ, tượng trưng cho sự độc lập, tự chủ và quyền tự do thể hiện bản thân.",
   },
   {
-    src: "/media/11.png",
+    src: "/media/11.webp",
     title: "Fine Line | Tiny Tulip",
     description: "A minimalist tulip design representing gentle love, elegance and quiet beauty in its simplest form.\n\nHoa tulip nhỏ xinh xắn, tượng trưng cho tình yêu nhẹ nhàng, sự tinh tế và vẻ đẹp giản dị.",
   },
   {
-    src: "/media/12.png",
+    src: "/media/12.webp",
     title: "Fine Line | Vintage Lily",
     description: "A flowing lily wrapping the body, balancing softness and strength through elegant yet defined lines.\n\nHoa ly ôm theo cơ thể, cân bằng giữa sự mềm mại và sức mạnh thông qua những đường nét thanh tao.",
   },
@@ -200,7 +200,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src="/media/IMG_1019 (1).PNG"
+            src="/media/IMG_1019 (1).webp"
             alt="DOUCES Studio"
             className="absolute inset-0 w-full h-full object-cover"
           />
