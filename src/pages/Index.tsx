@@ -91,8 +91,8 @@ const collectionItems = [
   },
   {
     src: "/media/capnhatourworks/16.png",
-    title: "Blackwork | Spirit Sentinel",
-    description: "The mystical falcon watching through darkness, carrying protection, wisdom and the clarity to see beyond illusion.\n\nChim ưng thần bí dõi nhìn trong bóng tối, mang theo sự bảo hộ, trí tuệ và khả năng nhìn thấu qua ảo giác.",
+    title: "Blackwork | Eye of Eternity",
+    description: "The mystical Horus eye watching through darkness, carrying protection, wisdom and the clarity to see beyond illusion.\n\nCon mắt thần Horus xuyên qua bóng tối, mang ý nghĩa bảo hộ, trí tuệ và khả năng nhìn thấu mọi giới hạn.",
   },
   {
     src: "/media/capnhatourworks/17.png",
