@@ -15,40 +15,99 @@ const clipDirs = ["cl", "cu", "cr"] as const;
 
 const collectionItems = [
   {
-    src: "/media/1.webp",
+    src: "/media/capnhatourworks/1.png",
     title: "Fine Line | Floral Tribe",
     description: "A delicate floral line gracefully flowing along the waist, enhancing natural curves with softness and elegance.\n\nKhóm hoa mảnh mai uốn lượn eo, tôn lên đường cong tự nhiên với vẻ mềm mại và tinh tế.",
   },
   {
-    src: "/media/IMG_1745.webp",
+    src: "/media/capnhatourworks/2.png",
     title: "Lettering | Body Flow Script",
     description: "\"Touch my skin, feel my story\" — a flowing phrase placed along the body, enhancing natural curves while inviting a deeper, intimate connection beyond words.\n\nCâu chữ uốn theo đường cong cơ thể, tôn lên vẻ quyến rũ và gợi mở một câu chuyện đầy cảm xúc, không cần lời nói",
   },
   {
-    src: "/media/3..png",
+    src: "/media/capnhatourworks/3.png",
     title: "Fine Line | Apricot Bloom Grace",
     description: "Soft apricot blossoms tracing the ribcage, flowing delicately with every curve to express quiet elegance and graceful femininity.\n\nNhững cánh mai mềm mại chạy dọc sườn, lướt theo từng đường cong cơ thể để tỏa nét kín đáo và vẻ đẹp thanh thục.",
   },
   {
-    src: "/media/IMG_1638.webp",
+    src: "/media/capnhatourworks/4.png",
+    title: "Vietnamese Design | Elegant Lotus",
+    description: "The lotus, a timeless symbol of Vietnam, represents purity, resilience and gracefulness rising above all.\n\nHoa sen - biểu tượng của Việt Nam, đại diện cho sự thanh khiết, kiên cường và vẻ đẹp thanh cao.",
+  },
+  {
+    src: "/media/capnhatourworks/5.png",
+    title: "Fine Line | Crown of Her Own",
+    description: "A refined crown symbolizing self-worth, independence and the power of living life as the queen of your own story.\n\nChiếc vương miện thanh mảnh tượng trưng cho giá trị bản thân, sự độc lập và sức mạnh của việc làm chính mình là nữ hoàng trong câu chuyện của chính mình.",
+  },
+  {
+    src: "/media/capnhatourworks/6.png",
+    title: "Fine Line | Petal Seduction",
+    description: "Colorful blossoms blooming along the waistline, blending sweetness and sensuality into a graceful expression of feminine confidence.\n\nNhững đóa hoa sắc màu nở dọc eo, hòa quyện nét ngọt ngào và gợi cảm, thể hiện vẻ đẹp đầy nữ tính và tự tin.",
+  },
+  {
+    src: "/media/capnhatourworks/7.png",
     title: "Realism | Cupid's Whisper",
     description: "A soft, lifelike cherub drawing its bow, symbolizing love, innocence and the quiet power of emotions.\n\nThiên thần nhỏ giương cung, biểu trưng cho tình yêu, sự thuần khiết và những cảm xúc sâu lắng",
   },
   {
-    src: "/media/IMG_1501.webp",
+    src: "/media/capnhatourworks/8.png",
+    title: "Fine Line | Mini Apricot Whisper",
+    description: "A tiny apricot blossom resting softly on the thigh, subtle yet meaningful, carrying gentle beauty with quiet charm.\n\nBông hoa mai nhỏ nhẹ đặt lên đùi, tinh tế nhưng đầy ý nghĩa, mang vẻ đẹp nhẹ nhàng và sự cuốn hút thầm lặng.",
+  },
+  {
+    src: "/media/capnhatourworks/9.png",
     title: "Fine Line | Ocean Whisper",
     description: "A delicate wave flowing beneath the chest, softly tracing the body's natural curve, symbolizing calmness, freedom and the quiet strength within.\n\nHình sóng biển mảnh nhẹ uốn theo chân ngực, ôm trọn đường cong cơ thể, tượng trưng cho sự bình yên, tự do và nội lực sâu bên trong",
   },
   {
-    src: "/media/2.webp",
+    src: "/media/capnhatourworks/10.png",
+    title: "Realism | Unbroken Valor",
+    description: "A standing figure pierced yet unwavering, embodying resilience, silent endurance and the strength to remain unshaken through pain.\n\nHình người đứng vững dù bị thương, tượng trưng cho sự kiên cường, chịu đựng âm thầm và sức mạnh không khuất phục trước nghịch cảnh.",
+  },
+  {
+    src: "/media/capnhatourworks/11.png",
     title: "Blackwork | Shadow Panther",
     description: "A bold black panther, captured in profile with intricate shadows and stark contrast, embodying raw power and silent dominance.\n\nMột chú báo đen ở góc nhìn nghiêng với sắc độ bóng đậm, tương phản sắc nét, toát lên sức mạnh nguyên thủy và uy lực.",
   },
   {
-    src: "/media/7.webp",
-    title: "Lettering | Love Confession",
-    description: '"Love you to the moon" — a timeless phrase capturing endless love and deep emotional connection.\n\n"Love you to the moon" - Lời tỏ tình vượt thời gian, thể hiện tình yêu vô tận và sự gắn kết sâu sắc.',
+    src: "/media/capnhatourworks/12.png",
+    title: "Blackwork | Succubus Sigil",
+    description: "Dark ornamental energy unfolding across the lower abdomen, expressing temptation, mystery and the fierce beauty of feminine power.\n\nHọa tiết blackwork trải rộng dọc bụng dưới, gợi lên sự quyến rũ, bí ẩn và vẻ đẹp mạnh mẽ của nữ quyền.",
   },
+  {
+    src: "/media/capnhatourworks/13.png",
+    title: "Lettering | Love Confession",
+    description: "\"Love you to the moon\" — a timeless phrase capturing endless love and deep emotional connection.\n\n\"Love you to the moon\" - Lời tỏ tình vượt thời gian, thể hiện tình yêu vô tận và sự gắn kết sâu sắc.",
+  },
+  {
+    src: "/media/capnhatourworks/14.png",
+    title: "Blackwork | Fearless Sparrow",
+    description: "A small bird captured in bold contrast, symbolizing quiet courage, freedom and the strength hidden within delicate souls.\n\nChú chim sẻ nhỏ nổi bật trong sắc đen mạnh mẽ, tượng trưng cho lòng dũng cảm âm thầm, sự tự do và nội lực sâu ẩn bên trong vẻ mong manh.",
+  },
+  {
+    src: "/media/capnhatourworks/15.png",
+    title: "Blackwork | Sacred Bull",
+    description: "A powerful sacred bull rendered in striking shadows, representing primal strength, determination and grounded resilience.\n\nHình tượng bò thần với những mảng đen sắc nét, đại diện cho sức mạnh nguyên bản, ý chí kiên định và sự vững vàng trước mọi thử thách.",
+  },
+  {
+    src: "/media/capnhatourworks/16.png",
+    title: "Blackwork | Spirit Sentinel",
+    description: "The mystical falcon watching through darkness, carrying protection, wisdom and the clarity to see beyond illusion.\n\nChim ưng thần bí dõi nhìn trong bóng tối, mang theo sự bảo hộ, trí tuệ và khả năng nhìn thấu qua ảo giác.",
+  },
+  {
+    src: "/media/capnhatourworks/17.png",
+    title: "Blackwork | Ocean Titan",
+    description: "A whale rising through textured waves and stone, embodying depth, resilience and the silent power of moving through life's vast currents.\n\nCá voi vươn mình giữa lớp đá và sóng, tượng trưng cho chiều sâu nội tâm, sự bền bỉ và sức mạnh lặng lẽ tiến về phía trước dẫu đời dông tố.",
+  },
+  {
+    src: "/media/capnhatourworks/18.png",
+    title: "Lettering | Words of Liberation",
+    description: "A flowing statement of freedom and inner strength, etched as a daily reminder to rise beyond fear and move forward boldly.\n\nDòng chữ tượng trưng cho tự do và sức mạnh nội tâm, như lời nhắc nhở mỗi ngày để vượt qua nỗi sợ và bước tiếp đầy bản lĩnh.",
+  },
+  {
+    src: "/media/capnhatourworks/19.png",
+    title: "Blackwork | Blade of Resolve",
+    description: "A darkened sword standing firm, symbolizing courage, discipline and the unwavering spirit to fight for one's own path.\n\nThanh kiếm đen mạnh mẽ hiên ngang, tượng trưng cho lòng can đảm, sự kỷ luật và ý chí kiên định trên hành trình sáng cháy mạnh.",
   },
 ];
 
