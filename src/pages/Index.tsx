@@ -128,7 +128,7 @@ function FineLineCarousel() {
     const timer = setInterval(() => {
       setDirection(1);
       setCurrent((prev) => (prev + 1) % collectionItems.length);
-    }, 2000);
+    }, 3000);
     return () => clearInterval(timer);
   }, [isPaused]);
 
@@ -140,12 +140,21 @@ function FineLineCarousel() {
     exit: (d: number) => ({ x: d > 0 ? -300 : 300, opacity: 0 }),
   };
 
+  // Preload next and previous images
+  const nextIdx = (current + 1) % collectionItems.length;
+  const prevIdx = (current - 1 + collectionItems.length) % collectionItems.length;
+
   return (
     <div
       className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
+      {/* Hidden preloader */}
+      <div className="hidden" aria-hidden="true">
+        <img src={collectionItems[nextIdx].src} alt="" />
+        <img src={collectionItems[prevIdx].src} alt="" />
+      </div>
       {/* Image */}
       <div className="relative aspect-[4/5] overflow-hidden rounded-lg bg-muted">
         <AnimatePresence mode="wait" custom={direction}>
