@@ -26,8 +26,8 @@ const collectionItems = [
   },
   {
     src: "/media/3..png",
-    title: "Vietnamese Design | Elegant Lotus",
-    description: "The lotus, a timeless symbol of Vietnam, represents purity, resilience and gracefulness rising above all.\n\nHoa sen - biểu tượng của Việt Nam, đại diện cho sự thanh khiết, kiên cường và vẻ đẹp thanh cao.",
+    title: "Fine Line | Apricot Bloom Grace",
+    description: "Soft apricot blossoms tracing the ribcage, flowing delicately with every curve to express quiet elegance and graceful femininity.\n\nNhững cánh mai mềm mại chạy dọc sườn, lướt theo từng đường cong cơ thể để tỏa nét kín đáo và vẻ đẹp thanh thục.",
   },
   {
     src: "/media/IMG_1638.webp",
