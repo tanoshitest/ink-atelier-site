@@ -22,7 +22,7 @@ export default function ArtistProfile() {
   return (
     <AnimatedPage>
       {/* Mobile layout */}
-      <div className="lg:hidden">
+      <div className="lg:hidden pt-20">
         <div className="relative h-[50vh]">
           <img src={artist.photo} alt={artist.name} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
@@ -54,9 +54,9 @@ export default function ArtistProfile() {
       </div>
 
       {/* Desktop layout: 1/3 sticky + 2/3 grid layout */}
-      <div className="hidden lg:grid grid-cols-[33.33%_minmax(0,1fr)] gap-8 px-12 py-12 items-start max-w-[1400px] mx-auto min-h-screen">
+      <div className="hidden lg:grid grid-cols-[33.33%_minmax(0,1fr)] gap-8 px-12 pt-32 pb-12 items-start max-w-[1400px] mx-auto min-h-screen">
         {/* Left — sticky */}
-        <div className="sticky top-12 h-[calc(100vh-6rem)] relative rounded-lg overflow-hidden">
+        <div className="sticky top-28 h-[calc(100vh-8rem)] relative rounded-lg overflow-hidden">
           <img src={artist.photo.replace("w=600", "w=800")} alt={artist.name} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
           <div className="absolute bottom-0 left-0 p-8">
