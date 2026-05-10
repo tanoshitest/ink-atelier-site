@@ -313,7 +313,7 @@ export default function HomePage() {
         </div>
         <div
           ref={artistsRef}
-          className="flex flex-col sm:flex-row justify-center items-center gap-12 sm:gap-6 md:gap-8 px-6 lg:px-12 pb-4"
+          className="flex overflow-x-auto snap-x snap-mandatory sm:flex-row justify-start sm:justify-center items-stretch gap-8 sm:gap-6 md:gap-8 px-6 lg:px-12 pb-12 hide-scrollbar"
         >
           {artists.map((artist, i) => (
             <motion.div
@@ -322,7 +322,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, delay: i * 0.08, ease }}
-              className="w-full max-w-[320px] md:max-w-none md:w-[300px]"
+              className="w-[280px] sm:w-[300px] flex-shrink-0 snap-center"
             >
               <Link to={`/artists/${artist.slug}`} className="group block text-center md:text-left h-full">
                 <div className="overflow-hidden rounded-lg">
