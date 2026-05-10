@@ -313,41 +313,33 @@ export default function HomePage() {
         </div>
         <div
           ref={artistsRef}
-          className="flex flex-row overflow-x-auto snap-x snap-mandatory sm:flex-col-reverse sm:overflow-visible items-center sm:justify-center gap-12 sm:gap-32 px-6 lg:px-12 pb-24 hide-scrollbar"
+          className="flex flex-col-reverse sm:flex-row sm:overflow-x-auto snap-x snap-mandatory items-center sm:items-stretch sm:justify-start md:justify-center gap-12 sm:gap-8 px-6 lg:px-12 pb-24 hide-scrollbar"
         >
           {artists.map((artist, i) => (
             <motion.div
               key={artist.slug}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: i * 0.1, ease }}
-              className="w-[280px] sm:w-full sm:max-w-[800px] flex-shrink-0 snap-center"
+              className="w-full max-w-[320px] sm:w-[350px] md:w-[400px] flex-shrink-0 snap-center"
             >
-              <Link to={`/artists/${artist.slug}`} className="group flex flex-col sm:flex-row items-center gap-8 sm:gap-16 text-center sm:text-left h-full">
-                <div className="overflow-hidden rounded-lg w-full sm:w-1/2 aspect-[3/4]">
+              <Link to={`/artists/${artist.slug}`} className="group block text-center md:text-left h-full">
+                <div className="overflow-hidden rounded-lg">
                   <img
                     src={artist.photo}
                     alt={artist.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-all duration-[800ms] group-hover:scale-105"
+                    className="w-full aspect-[3/4] object-cover transition-all duration-[600ms] group-hover:brightness-110"
                     style={{ transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)" }}
                   />
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-3xl sm:text-5xl text-foreground transition-colors duration-300 group-hover:text-accent">
-                    {artist.name}
-                  </h3>
-                  <p className="font-body text-sm sm:text-base text-muted-foreground mt-4 leading-relaxed max-w-[400px]">
-                    {artist.bio}
-                  </p>
-                  <p className="font-body text-[13px] uppercase tracking-widest text-accent mt-6">
-                    {artist.specialty}
-                  </p>
-                  <div className="mt-8">
-                    <span className="text-link">View Portfolio →</span>
-                  </div>
-                </div>
+                <h3 className="font-display text-2xl sm:text-3xl text-foreground mt-6 transition-colors duration-300 group-hover:text-accent">
+                  {artist.name}
+                </h3>
+                <p className="font-body text-[13px] text-muted-foreground mt-2 md:mt-1">
+                  {artist.specialty}
+                </p>
               </Link>
             </motion.div>
           ))}
