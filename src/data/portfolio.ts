@@ -8,12 +8,12 @@ export interface PortfolioItem {
 }
 
 export const portfolioItems: PortfolioItem[] = [
-  { id: 201, src: "/media/anh tho nam/z7809055914130_0f15721da7096125848cee1a635cdbc6.jpg", title: "Blackwork #21", artist: "DOUCES Studio", style: "Blackwork & Fine Line", aspect: "3/4" },
+  { id: 201, src: "/media/anh tho nam/z7809055914130_0f15721da7096125848cee1a635cdbc6.jpg", title: "Blackwork #21", artist: "Esther", style: "Blackwork & Fine Line", aspect: "3/4" },
   { id: 202, src: "/media/anh tho nam/z7809055917155_a186c27ec3a9a00e90a71f7ceb9c8be6.jpg", title: "Blackwork #22", artist: "Esther", style: "Blackwork & Fine Line", aspect: "3/4" },
-  { id: 203, src: "/media/anh tho nam/z7809055920225_9651325d09d06b263b5ee57d28396680.jpg", title: "Blackwork #23", artist: "DOUCES Studio", style: "Blackwork & Fine Line", aspect: "3/4" },
+  { id: 203, src: "/media/anh tho nam/z7809055920225_9651325d09d06b263b5ee57d28396680.jpg", title: "Blackwork #23", artist: "Esther", style: "Blackwork & Fine Line", aspect: "3/4" },
   { id: 204, src: "/media/anh tho nam/z7809055920327_6ba06b7a2bfd8b54085f5979873d7b57.jpg", title: "Blackwork #24", artist: "Esther", style: "Blackwork & Fine Line", aspect: "3/4" },
   { id: 205, src: "/media/anh tho nam/z7809055921011_03cfc552501cd89fa019281ebdcb1829.jpg", title: "Blackwork #25", artist: "Esther", style: "Blackwork & Fine Line", aspect: "3/4" },
-  { id: 206, src: "/media/anh tho nam/z7809055921627_d32608d6ad29d09d3349dac52c5f8108.jpg", title: "Blackwork #26", artist: "DOUCES Studio", style: "Blackwork & Fine Line", aspect: "3/4" },
+  { id: 206, src: "/media/anh tho nam/z7809055921627_d32608d6ad29d09d3349dac52c5f8108.jpg", title: "Blackwork #26", artist: "Esther", style: "Blackwork & Fine Line", aspect: "3/4" },
   { id: 207, src: "/media/anh tho nam/z7809055924959_3d84f1b089d9604a77233ce85f909359.jpg", title: "Blackwork #27", artist: "Esther", style: "Blackwork & Fine Line", aspect: "3/4" },
 
   // FEATURED IN "ALL" (Top 6 explicitly ordered)
