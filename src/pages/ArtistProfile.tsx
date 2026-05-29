@@ -30,7 +30,7 @@ export default function ArtistProfile() {
         <div className="content-max py-12">
           <h1 className="font-display text-4xl text-foreground">{artist.name}</h1>
           <p className="font-body text-sm text-muted-foreground mt-2">{artist.specialty}</p>
-          <p className="font-body text-xs text-muted-foreground mt-1">{artist.experience} — {artist.location}</p>
+
           <p className="font-body text-[15px] text-secondary-foreground/80 mt-6 leading-relaxed max-w-[400px]">
             {artist.bio}
           </p>
@@ -62,7 +62,7 @@ export default function ArtistProfile() {
           <div className="absolute bottom-0 left-0 p-8">
             <h1 className="font-display text-4xl text-foreground">{artist.name}</h1>
             <p className="font-body text-sm text-foreground/90 mt-2">{artist.specialty}</p>
-            <p className="font-body text-xs text-foreground/80 mt-1">{artist.experience} — {artist.location}</p>
+
             <p className="font-body text-[14.5px] text-foreground/70 mt-4 leading-relaxed lg:max-w-none xl:max-w-[360px]">
               {artist.bio}
             </p>

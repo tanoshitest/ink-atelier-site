@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "create-favicon": "node C:/Users/ADMIN/.gemini/antigravity-ide/brain/09243bc2-998f-44c7-8a5d-ffbcb3ecda8c/scratch/create_favicon.mjs",
+    "rotate-images": "node rotate_portfolio_images.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
